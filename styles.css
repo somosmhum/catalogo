@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .card img {
@@ -35,3 +35,23 @@ footer {
 #item-3 {
     background-image: url('./recursos/tercera.jpg');
 }
+/* Estilo general para el navbar */
+.custom-bg {
+    background-color: #343a40 !important;
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color: #ffffff;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
