@@ -54,9 +54,7 @@ footer {
 .nav-link:hover {
     color: #ecd9bf;
 }
-.navbar-logo {
-    width: 100px;
-    height: 50px;
-    display: inline-block; /* Equivalente a "d-inline-block" */
-    vertical-align: text-top; /* Equivalente a "align-text-top" */
+nav .navbar-logo {
+    width: 120px;
+    height: 60px;
 }
