@@ -25,15 +25,15 @@ footer {
 }
 
 #item-1 {
-    background-image: url('/recursos/primeraimag.jpg');
+    background-image: url('https://somosmhum.github.io/catalogo/RECURSOS/primeraimag.jpg');
 }
 
 #item-2 {
-    background-image: url('./recursos/segunda.jpg');
+    background-image: url('https://somosmhum.github.io/catalogo/RECURSOS/segunda.jpg');
 }
 
 #item-3 {
-    background-image: url('./recursos/tercera.jpg');
+    background-image: url('https://somosmhum.github.io/catalogo/RECURSOS/tercera.jpg');
 }
 /* Estilo general para el navbar */
 .custom-bg {
@@ -54,4 +54,9 @@ footer {
 .nav-link:hover {
     color: #ecd9bf;
 }
-
+.navbar-logo {
+    width: 100px;
+    height: 50px;
+    display: inline-block; /* Equivalente a "d-inline-block" */
+    vertical-align: text-top; /* Equivalente a "align-text-top" */
+}
