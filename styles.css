@@ -23,29 +23,13 @@ footer {
     background-size: cover;
     background-position: center;
 }
-.carousel-item {
-    height: 100vh; /* Ajusta la altura del carrusel según la altura de la pantalla */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover; /* Las imágenes ocuparán todo el contenedor */
-    background-position: center;
+/* Estilos generales para el texto */
+#heroCarousel h1 {
+    font-size: 3rem; /* Tamaño de fuente grande para pantallas grandes */
 }
 
-@media (max-width: 768px) {
-    /* Para pantallas más pequeñas (tablets y móviles) */
-    .carousel-item {
-        height: 60vh; /* Reduce la altura del carrusel */
-        background-size: contain; /* Ajusta las imágenes sin recortarlas */
-    }
-
-    h1 {
-        font-size: 1.5rem; /* Reduce el tamaño del texto en pantallas pequeñas */
-    }
-
-    p {
-        font-size: 1rem; /* Ajusta el tamaño de los párrafos */
-    }
+#heroCarousel p {
+    font-size: 1.5rem; /* Tamaño de fuente para párrafos en pantallas grandes */
 }
 
 #item-1 {
@@ -58,8 +42,66 @@ footer {
 
 #item-3 {
     background-image: url('https://somosmhum.github.io/catalogo/RECURSOS/tercera.jpg');
+
 }
-/* Estilo general para el navbar */
+
+/* Estilo general de los items */
+#item-1, #item-2, #item-3 {
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+/* Estilos generales para los botones de control */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 2rem;
+    height: 3rem;
+}
+/* Media query para dispositivos móviles (pantallas menores a 768px) */
+@media (max-width: 768px) 
+{
+    #item-1, #item-2, #item-3 {
+        height: 30vh; /* Reduce la altura en pantallas pequeñas */
+        
+    }
+    #heroCarousel h1 {
+        font-size: 2rem; /* Tamaño de fuente más pequeño para pantallas móviles */
+    }
+
+    #heroCarousel p {
+        font-size: 1rem; /* Tamaño de fuente más pequeño para párrafos en pantallas móviles */
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 2rem; /* Tamaño más pequeño para dispositivos móviles */
+        height: 2rem;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        top: 50%; /* Ajusta la posición vertical */
+        transform: translateY(-50%);
+    }
+    
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 1rem; /* Tamaño más pequeño para dispositivos móviles */
+            height: 2rem;
+        }
+    
+        .carousel-control-prev,
+        .carousel-control-next {
+            top: 50%; /* Ajusta la posición vertical */
+            transform: translateY(-50%);
+            
+        }
+}
+    
+
+
+
 .custom-bg {
     background-color: #343a40 !important;
 }
