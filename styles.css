@@ -200,3 +200,33 @@ strong, b {
         text-align: justify
     }
 }
+/*--------------------------------------- seccion tabla de talles ---------------------------- */
+/* Fondo de la sección "Tabla de Talles" */
+.tabla-talle-section {
+    background-image: url('https://somosmhum.github.io/catalogo/RECURSOS/tabla.jpg'); /* Cambia esto por la URL de la imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff; /* Texto en blanco para contraste */
+    padding: 60px 20px;
+    border-radius: 10px;
+}
+
+/* Fondo semitransparente dentro de la sección */
+.tabla-talle-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Estilo de los botones */
+.btn-custom {
+    background-color: #d5786a; /* Color personalizado */
+    color: #fff;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #b65a57; /* Color más oscuro al pasar el mouse */
+}
