@@ -248,8 +248,9 @@ strong, b {
 .modal-content {
     margin: auto;
     display: block;
-    width: 50%;
-    max-width: 500px;
+    max-width: none; /* Elimina el ancho máximo */
+    width: auto; /* Ancho automático */
+    height: auto; /* Altura automática */
 }
 
 .close {
