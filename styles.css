@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'roboto', sans-serif;
     background-color: #ffffff;
 }
 
@@ -33,6 +33,17 @@ body {
 .row.g-4 > .col-md-4 {
     display: flex;
     flex-direction: column;
+}
+.btn-outline-dark {
+    background-color: #343a40; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin bordes */
+    transition: background-color 0.3s ease; /* Transición suave para el hover */
+}
+
+.btn-outline-dark:hover {
+    background-color: #d5786a; /* Color hover */
+    color: #fff; /* Mantener texto blanco */
 }
 @media (max-width: 768px) {
     .row {
@@ -159,9 +170,29 @@ footer {
 }
 
 .nav-link:hover {
-    color: #ecd9bf;
+    color: #d5786a;
+    font-weight: bold; /* Letra en negrita */
 }
 nav .navbar-logo {
     width: 120px;
     height: 60px;
+}
+
+/*--------------------------------------- seccion quienes somos ---------------------------- */
+strong, b {
+    color: #d5786a; /* Cambiar el color a #d5786a */
+}
+#quienes-somos {
+    position: relative;
+    background: url('https://somosmhum.github.io/catalogo/RECURSOS/fondo.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff; /* Ajusta el color del texto para contrastar con el fondo */
+    padding: 50px 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Para que el texto sea más legible */
+}
+
+#quienes-somos .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Filtro oscuro para mejorar el contraste */
+    padding: 30px;
+    border-radius: 8px;
 }
