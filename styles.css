@@ -186,3 +186,17 @@ strong, b {
     text-align: justify;
 }
 
+@media (max-width: 768px) {
+    #quienes-somos {
+        padding: 20px; /* Ajusta el padding para móviles */
+    }
+    .fs-5 {
+        font-size: 1rem; /* Ajusta el tamaño de fuente para móviles */
+    }
+    .text-center {
+        text-align: center;
+    }
+    .text-justify {
+        text-align: left; /* Cambia la alineación del texto para mejorar la legibilidad en móviles */
+    }
+}
