@@ -197,6 +197,6 @@ strong, b {
         text-align: center;
     }
     .text-justify {
-        text-align: left; /* Cambia la alineación del texto para mejorar la legibilidad en móviles */
+        text-align: justify
     }
 }
