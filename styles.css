@@ -272,4 +272,27 @@ strong, b {
 @media (max-width: 768px) {
     .tabla-talle-section {
         padding: 50px 20px;}
+   
+    .modal-content {
+            width: 90%; /* Ajusta el ancho de la imagen para móviles */
+            max-width: 90%; /* Ancho máximo para móviles */
+        }
+    
+    
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
     }
+    
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
