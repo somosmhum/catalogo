@@ -269,3 +269,7 @@ strong, b {
     text-decoration: none;
     cursor: pointer;
 }
+@media (max-width: 768px) {
+    .tabla-talle-section {
+        padding: 250px 20px;}
+    }
