@@ -184,7 +184,7 @@ strong, b {
 }
 #quienes-somos {
     position: relative;
-    background: url('https://somosmhum.github.io/catalogo/RECURSOS/quienesomos.jpg') no-repeat center center;
+    background: url('https://somosmhum.github.io/catalogo/RECURSOS/somos.jpg') no-repeat center center;
     background-size: cover;
     color: #fff; /* Ajusta el color del texto para contrastar con el fondo */
     padding: 50px 15px;
