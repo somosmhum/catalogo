@@ -182,4 +182,7 @@ nav .navbar-logo {
 strong, b {
     color: #d5786a; /* Cambiar el color a #d5786a */
 }
+.text-justify {
+    text-align: justify;
+}
 
