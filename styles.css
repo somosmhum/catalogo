@@ -180,15 +180,15 @@ nav .navbar-logo {
 
 /*--------------------------------------- seccion quienes somos ---------------------------- */
 strong, b {
-    color: #d5786a; /* Cambiar el color a #d5786a */
+    color: #000000; /* Cambiar el color a #d5786a */
 }
 #quienes-somos {
     position: relative;
     background-color: #d5786a;
-    background-size: cover;
     color: #fff; /* Ajusta el color del texto para contrastar con el fondo */
-    padding: 50px 15px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Para que el texto sea más legible */
+    margin: 0; /* Elimina los márgenes por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    height: 100vh; /* Asegura que el fondo ocupe toda la altura de la ventana */
 }
 
 #quienes-somos .overlay {
