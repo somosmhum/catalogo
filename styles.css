@@ -17,7 +17,7 @@ body {
 }
 .content {
     flex: 1;}
-    
+
 /* Estilos para el menú hamburguesa */
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
@@ -332,3 +332,23 @@ strong, b {
     background-color: #f8f9fa;
     text-align: center;
   }
+
+  /*--------------------------------------- seccion ropa interior ---------------------------- */
+/* Fondo de la sección "Tabla de Talles" */
+.ropa-interior-section {
+    background-image: url('https://somosmhum.github.io/catalogo/RECURSOS/fondoropa.jpg'); /* Cambia esto por la URL de la imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff; /* Texto en blanco para contraste */
+    padding: 250px 20px;
+    border-radius: 10px;
+}
+
+/* Fondo semitransparente dentro de la sección */
+.ropa-interior-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
