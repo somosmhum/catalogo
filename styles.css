@@ -400,3 +400,11 @@ strong, b {
     margin-top: 16px;
 }
  /*--------------------------------------- seccion pijamas ---------------------------- */
+/* Estilo para los títulos de las tarjetas */
+.product-title {
+    background-color: #343a40; /* Fondo rosado claro */
+    color: #d5786a; /* Texto color vino */
+    padding: 10px;
+    text-align: center;
+    margin: -16px -16px 16px -16px; /* Alineación perfecta con el borde */
+    border-radius: 5px 5px 0 0; /* Esquinas superiores redondeadas */}
