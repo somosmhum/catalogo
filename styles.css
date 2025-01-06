@@ -355,3 +355,13 @@ strong, b {
 .my-5 {
      margin-top: none !important;
      margin-bottom: none !important;}
+
+     @media (max-width: 768px) {
+        .ropa-interior-section {
+            padding: 50px 20px;
+        display: inline-block;
+        width: auto;
+        margin: 0 10px;
+        }
+            
+        }
