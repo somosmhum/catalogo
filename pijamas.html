@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galería de Productos</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Card Grid Layout</title>
+  <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -47,62 +47,104 @@
         </ol>
     </div>
 </nav>
- <div class="container mt-5">
+<div class="container my-5">
     <h1 class="text-center mb-4">Pijamas</h1>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" id="product-gallery">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Producto 1 -->
       <div class="col">
-        <div class="card product" data-id="1">
+        <div class="card h-100">
           <img src="https://somosmhum.github.io/catalogo/RECURSOS/pijamaliso.jpg" class="card-img-top" alt="Producto 1">
-          <div class="card-body text-center">
-            <h5 class="card-title">Pijama liso</h5>
+          <div class="card-body">
+            <h5 class="card-title">Pijama Liso</h5>
+            <p class="card-text"><strong>Precio:</strong> $28.000</p>
+            <p class="card-text"><strong>Color:</strong> melange</p>
+            <p class="card-text"><strong>Talles:</strong> 1,2,3,4</p>
+            <p class="card-text"><strong>Caracteristicas:</strong> Confeccionado con morley viscosa, el short posee elastico en cintura para un mejor agarre. Musculosa con detalle en puntilla al tono de la tela y tiras regulables.</p>
           </div>
         </div>
       </div>
+      <!-- Producto 2 -->
       <div class="col">
-        <div class="card product" data-id="2">
-          <img src="https://somosmhum.github.io/catalogo/RECURSOS/pijamarayas.jpg" class="card-img-top" alt="Producto 2">
-          <div class="card-body text-center">
-            <h5 class="card-title">Pijama rayas</h5>
+        <div class="card h-100">
+          <img src="https://somosmhum.github.io/catalogo/RECURSOS/pijamalisonegro.jpg" class="card-img-top" alt="Producto 2">
+          <div class="card-body">
+            <h5 class="card-title">Pijama Liso</h5>
+            <p class="card-text"><strong>Precio:</strong> $28.000</p>
+            <p class="card-text"><strong>Color:</strong> Negro</p>
+            <p class="card-text"><strong>Talle:</strong> 1,2,3,4</p>
+            <p class="card-text"><strong>Caracteristicas:</strong> Confeccionado con morley viscosa, el short posee elastico en cintura para un mejor agarre. Musculosa con detalle en puntilla al tono de la tela y tiras regulables.</p>
           </div>
         </div>
       </div>
+      <!-- Producto 3 -->
       <div class="col">
-        <div class="card product" data-id="3">
+        <div class="card h-100">
           <img src="https://somosmhum.github.io/catalogo/RECURSOS/pijamaflores.jpg" class="card-img-top" alt="Producto 3">
-          <div class="card-body text-center">
-            <h5 class="card-title">Piajama flores</h5>
+          <div class="card-body">
+            <h5 class="card-title">Pijama flores</h5>
+            <p class="card-text"><strong>Precio:</strong> $28.000</p>
+            <p class="card-text"><strong>Color:</strong> flores marroncitas</p>
+            <p class="card-text"><strong>Talle:</strong> 1,2,3,4 </p>
+            <p class="card-text"><strong>Caracteristicas:</strong> Confeccionado con morley viscosa, el short posee elastico en cintura para un mejor agarre. Musculosa con detalle en puntilla blanca y tiras regulables.</p>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Detalles del Producto -->
-    <div class="mt-5" id="product-details" style="display: none;">
-      <h2 class="text-center">Detalles del Producto</h2>
-      <div class="card p-4">
-        <h3 id="product-name" class="text-center mb-3"></h3>
-        <div>
-          <h5>Colores Disponibles:</h5>
-          <div id="colors" class="d-flex flex-wrap gap-2"></div>
+      <!-- Producto 4 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 4">
+          <div class="card-body">
+            <h5 class="card-title">Producto 4</h5>
+            <p class="card-text"><strong>Precio:</strong> $24.000</p>
+            <p class="card-text"><strong>Color:</strong> Negro</p>
+            <p class="card-text"><strong>Talle:</strong> XL</p>
+            <p class="card-text"><strong>Observaciones:</strong> Perfecto para ocasiones formales.</p>
+          </div>
         </div>
-        <div class="mt-3">
-          <h5>Tallas Disponibles:</h5>
-          <div id="sizes" class="d-flex flex-wrap gap-2"></div>
+      </div>
+      <!-- Producto 5 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 5">
+          <div class="card-body">
+            <h5 class="card-title">Producto 5</h5>
+            <p class="card-text"><strong>Precio:</strong> $18.000</p>
+            <p class="card-text"><strong>Color:</strong> Blanco</p>
+            <p class="card-text"><strong>Talle:</strong> M</p>
+            <p class="card-text"><strong>Observaciones:</strong> Diseño minimalista.</p>
+          </div>
         </div>
-        <div class="mt-3">
-          <h5>Tipos de Tela:</h5>
-          <div id="fabrics" class="d-flex flex-wrap gap-2"></div>
+      </div>
+      <!-- Producto 6 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 6">
+          <div class="card-body">
+            <h5 class="card-title">Producto 6</h5>
+            <p class="card-text"><strong>Precio:</strong> $22.000</p>
+            <p class="card-text"><strong>Color:</strong> Gris</p>
+            <p class="card-text"><strong>Talle:</strong> S</p>
+            <p class="card-text"><strong>Observaciones:</strong> Material reciclable.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Producto 7 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 7">
+          <div class="card-body">
+            <h5 class="card-title">Producto 7</h5>
+            <p class="card-text"><strong>Precio:</strong> $26.000</p>
+            <p class="card-text"><strong>Color:</strong> Rosa</p>
+            <p class="card-text"><strong>Talle:</strong> L</p>
+            <p class="card-text"><strong>Observaciones:</strong> Edición limitada.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-   <!-- Footer -->
-   <footer>
-    <p>&copy; 2025 Somos.mhum / Catálogo . Todos los derechos reservados.</p>
-</footer>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://somosmhum.github.io/catalogo/script.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
 </body>
 </html>
