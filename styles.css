@@ -341,7 +341,7 @@ strong, b {
     background-position: center;
     background-repeat: no-repeat;
     color: #fff; /* Texto en blanco para contraste */
-    padding: 250px 20px;
+    padding: 150px 20px;
     border-radius: 10px;
 }
 
@@ -352,3 +352,6 @@ strong, b {
     border-radius: 10px;
     text-align: center;
 }
+.my-5 {
+     margin-top: none !important;
+     margin-bottom: none !important;}
