@@ -1,22 +1,20 @@
 
-*{
-    margin: 0 ;
-    padding: 0 ;
-    box-sizing: border-box; }
-    
-
-body {
-    font-family: 'roboto', sans-serif; 
-    background-color: #ffffff;
-    height: 100%;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-
-}
-.content {
-    flex: 1 !important;}
+    min-height: 100vh; /* Hace que el body tenga al menos la altura de la pantalla */
+  }
+  
+  .content {
+    flex: 1; /* El contenido principal toma todo el espacio disponible */
+  }
 
 /* Estilos para el menú hamburguesa */
 .custom-toggler .navbar-toggler-icon {
