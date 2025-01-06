@@ -422,14 +422,14 @@ strong, b {
 
 /* Fondo semitransparente dentro de la sección */
 .pijama-content {
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    background-color: rgba(32, 32, 32, 0.5); /* Fondo oscuro semitransparente */
     padding: 20px;
     border-radius: 10px;
     text-align: center;
 }
 .btn-pijamas {
-    background-color: #343a40; /* Color de fondo */
-    color: white; /* Color del texto */
+    background-color: #c1b0d2; /* Color de fondo */
+    color: rgb(0, 0, 0); /* Color del texto */
     border: none; /* Sin borde */
   }
   
@@ -441,7 +441,7 @@ strong, b {
     width: 100%;
   }
   @media (max-width: 768px) {
-    .btn-pijamas {
-      width: 100%; /* Asegura que los botones ocupen el 100% del ancho en dispositivos móviles */
-    }
+  .btn-pijamas {
+    width: 100%; /* Asegura que los botones ocupen el 100% del ancho en dispositivos móviles */
   }
+}
