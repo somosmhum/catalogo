@@ -10,10 +10,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Hace que el body tenga al menos la altura de la pantalla */
-    align-items: center;
-    justify-content: center;
     
-;
   }
   
   .content {
@@ -354,7 +351,6 @@ strong, b {
     border-radius: 10px;
     text-align: center;
 }
-.my-5 {
-    }
+
 
     
