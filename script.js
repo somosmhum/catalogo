@@ -74,7 +74,7 @@ const products = {
     });
   });
 /*--------------------------------------- seccion pijamas ---------------------------- */
-const products = {
+const product = {
   1: {
     name: "Producto 1",
     colors: ["Rojo", "Azul", "Verde"],
