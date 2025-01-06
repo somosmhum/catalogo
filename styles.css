@@ -400,19 +400,25 @@ strong, b {
     margin-top: 16px;
 }
  /*--------------------------------------- seccion pijamas ---------------------------- */
-.card {
-    transition: transform 0.2s;
-    cursor: pointer;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  #colors div, #sizes div, #fabrics div {
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f9fa;
+/* Estilo para los títulos de las tarjetas */
+/* Estilo para los títulos de las tarjetas */
+.product-card-title {
+    background-color: #f8d7da; /* Fondo rosado claro */
+    color: #721c24; /* Texto color vino */
+    padding: 10px;
     text-align: center;
+    margin: -16px -16px 16px -16px; /* Alineación perfecta con el borde */
+    border-radius: 5px 5px 0 0; /* Esquinas superiores redondeadas */
+  }
+  
+  /* Sombra para las tarjetas */
+  .product-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Efecto hover en las tarjetas */
+  .product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
