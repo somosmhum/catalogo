@@ -79,19 +79,43 @@ const products = {
     name: "Producto 1",
     colors: ["Rojo", "Azul", "Verde"],
     sizes: ["S", "M", "L"],
-    fabrics: ["Algodón", "Poliéster"],
+    observations: ["Hecho a mano", "Lavado a máquina"],
   },
   2: {
     name: "Producto 2",
     colors: ["Negro", "Blanco"],
     sizes: ["M", "L", "XL"],
-    fabrics: ["Lana", "Seda"],
+    observations: ["Material reciclado", "Secado rápido"],
   },
   3: {
     name: "Producto 3",
     colors: ["Amarillo", "Naranja"],
     sizes: ["XS", "S", "M"],
-    fabrics: ["Denim", "Lino"],
+    observations: ["Resistente al agua", "Alta durabilidad"],
+  },
+  4: {
+    name: "Producto 4",
+    colors: ["Rosa", "Morado"],
+    sizes: ["S", "M", "L"],
+    observations: ["Suave al tacto", "Hipoalergénico"],
+  },
+  5: {
+    name: "Producto 5",
+    colors: ["Gris", "Azul Marino"],
+    sizes: ["L", "XL", "XXL"],
+    observations: ["Antibacteriano", "Transpirable"],
+  },
+  6: {
+    name: "Producto 6",
+    colors: ["Verde Oliva", "Marrón"],
+    sizes: ["M", "L", "XL"],
+    observations: ["Eco-friendly", "Secado rápido"],
+  },
+  7: {
+    name: "Producto 7",
+    colors: ["Blanco", "Negro"],
+    sizes: ["S", "M", "L"],
+    observations: ["Alta elasticidad", "No se deforma"],
   },
 };
 
@@ -118,12 +142,12 @@ document.querySelectorAll(".product").forEach((product) => {
       sizesContainer.appendChild(sizeDiv);
     });
 
-    const fabricsContainer = document.getElementById("fabrics");
-    fabricsContainer.innerHTML = "";
-    details.fabrics.forEach(fabric => {
-      const fabricDiv = document.createElement("div");
-      fabricDiv.textContent = fabric;
-      fabricsContainer.appendChild(fabricDiv);
+    const observationsContainer = document.getElementById("observations");
+    observationsContainer.innerHTML = "";
+    details.observations.forEach(observation => {
+      const observationDiv = document.createElement("div");
+      observationDiv.textContent = observation;
+      observationsContainer.appendChild(observationDiv);
     });
 
     document.getElementById("product-details").style.display = "block";
