@@ -24,10 +24,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://somosmhum.github.io/catalogo/quienes-somos.html">Quiénes Somos</a>
+                        <a class="nav-link" href="https://somosmhum.github.io/catalogo/quienes-somos.html">Quiénes
+                            Somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://somosmhum.github.io/catalogo/tabladetalles.html">Tabla de Talles</a>
+                        <a class="nav-link" href="https://somosmhum.github.io/catalogo/tabladetalles.html">Tabla de
+                            Talles</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contacto">Contacto</a>
@@ -75,37 +77,11 @@
     <!-- Script para cerrar el menú -->
 
     </script>
-    
-    <script src="https://somosmhum.github.io/catalogo/script.js"></script> <!-- Enlace a tu archivo JavaScript -->
 
+    <script src="https://somosmhum.github.io/catalogo/script.js"></script> <!-- Enlace a tu archivo JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     </script>
-      <!-- Scripts de Bootstrap -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-      <script>
-          document.addEventListener("DOMContentLoaded", function () {
-              // Seleccionamos el botón de hamburguesa
-              const navbarToggler = document.querySelector(".navbar-toggler");
-              const navbarCollapse = document.querySelector("#navbarNav");
-  
-              // Creamos una instancia de Collapse de Bootstrap
-              const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-  
-              // Al hacer clic en el botón de hamburguesa, el menú se muestra o se oculta
-              navbarToggler.addEventListener("click", () => {
-                  bsCollapse.toggle();  // Alterna entre mostrar y ocultar el menú
-              });
-  
-              // Al hacer clic en los enlaces del menú, también se cierra el menú
-              const navLinks = document.querySelectorAll(".nav-link");
-              navLinks.forEach(link => {
-                  link.addEventListener("click", () => {
-                      if (navbarCollapse.classList.contains("show")) {
-                          bsCollapse.hide(); // Oculta el menú si está abierto
-                      }
-                  });
-              });
-          });
-      </script>
+
 </body>
 
 
