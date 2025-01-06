@@ -427,3 +427,12 @@ strong, b {
     border-radius: 10px;
     text-align: center;
 }
+.btn-pijamas {
+    background-color: #343a40; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+  }
+  
+  .btn-pijamas:hover {
+    background-color: #d5786a; /* Color de fondo al pasar el ratón */
+  }
