@@ -16,6 +16,34 @@
   .content {
     flex: 1; /* El contenido principal toma todo el espacio disponible */
   }
+  .breadcrumb {
+    background-color: #f8f9fa; /* Color de fondo suave */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.breadcrumb-item a {
+    color: #343a40; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 500; /* Grosor del texto */
+    transition: color 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+.breadcrumb-item a:hover {
+    color: #d5786a; /* Color del enlace al pasar el mouse */
+}
+
+.breadcrumb-item.active {
+    color: #6c757d; /* Color del texto del elemento activo */
+    font-weight: bold; /* Texto más destacado */
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: '>'; /* Cambia el separador por un símbolo mayor que */
+    color: #6c757d; /* Color del separador */
+    margin: 0 0.5rem; /* Espaciado alrededor del separador */
+}
 
 /* Estilos para el menú hamburguesa */
 .custom-toggler .navbar-toggler-icon {
