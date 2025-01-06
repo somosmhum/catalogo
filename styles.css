@@ -399,3 +399,20 @@ strong, b {
 .my-float {
     margin-top: 16px;
 }
+ /*--------------------------------------- seccion pijamas ---------------------------- */
+.card {
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  #colors div, #sizes div, #fabrics div {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
