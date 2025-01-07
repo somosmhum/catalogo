@@ -466,7 +466,7 @@ strong, b {
 .image-count {
     background-color: #d5786a !important; /* Cambia el color de fondo del badge */
     color: #ffffff !important;           /* Cambia el color del texto */
-    border-radius: 50%;                  /* Hace que sea un círculo (opcional) */
-    font-size: 16px;                     /* Cambia el tamaño del texto */
+    border-radius: 20%;                  /* Hace que sea un círculo (opcional) */
+    font-size: 14px;                     /* Cambia el tamaño del texto */
     padding: 5px 10px;                   /* Ajusta el tamaño del badge */
 }
