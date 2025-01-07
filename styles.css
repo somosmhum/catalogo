@@ -462,3 +462,11 @@ strong, b {
 #modalBombachasOpciones .modal-body button.btn-secondary:hover {
     background-color: #545b62; /* Gris más oscuro al pasar el mouse */
 }
+/*--------------------------------------- conjuntos ---------------------------- */
+.image-count {
+    background-color: #d5786a !important; /* Cambia el color de fondo del badge */
+    color: #ffffff !important;           /* Cambia el color del texto */
+    border-radius: 50%;                  /* Hace que sea un círculo (opcional) */
+    font-size: 16px;                     /* Cambia el tamaño del texto */
+    padding: 5px 10px;                   /* Ajusta el tamaño del badge */
+}
