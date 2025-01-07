@@ -456,6 +456,7 @@ strong, b {
 #modalBombachasOpciones .modal-body button.btn-secondary {
     background-color: #d5786a !important; /* Gris para "Pack" */
     color: #fff;
+    justify-items: center;
 }
 
 #modalBombachasOpciones .modal-body button.btn-secondary:hover {
