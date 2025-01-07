@@ -445,3 +445,8 @@ strong, b {
     width: 100%; /* Asegura que los botones ocupen el 100% del ancho en dispositivos móviles */
   }
 }
+@media (max-width: 768px) {
+    .btn-custom {
+      width: 100%; /* Asegura que los botones ocupen el 100% del ancho en dispositivos móviles */
+    }
+  }
