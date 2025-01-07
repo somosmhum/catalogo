@@ -454,19 +454,10 @@ strong, b {
 
 
 #modalBombachasOpciones .modal-body button.btn-secondary {
-    background-color: #d5786a; /* Gris para "Pack" */
+    background-color: #d5786a !important; /* Gris para "Pack" */
     color: #fff;
 }
 
 #modalBombachasOpciones .modal-body button.btn-secondary:hover {
     background-color: #545b62; /* Gris más oscuro al pasar el mouse */
-}
-.modal-content-bombachas {
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra elegante */
-}
-
-.modal-header-bombachas {
-    background-color: #f8f9fa; /* Fondo claro */
-    border-bottom: 1px solid #e9ecef;
 }
