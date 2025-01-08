@@ -451,15 +451,16 @@ strong, b {
  
 
   @media (max-width: 768px) {
-  .btn-pijamas {
-    width: 100%; /* Asegura que los botones ocupen el 100% del ancho en dispositivos móviles */
-  }
-}
-@media (max-width: 768px) {
-    .btn-custom {
-      width: 100%; /* Asegura que los botones ocupen el 100% del ancho en dispositivos móviles */
+    .btn-pijamas {
+        width: -webkit-fill-available;
     }
-  }
+}
+
+@media (max-width: 768px) {
+     
+        .btn-custom {
+            width: -webkit-fill-available; }
+        }
  /*--------------------------------------- seccion ropa interior ---------------------------- */
 
 
@@ -491,7 +492,7 @@ a:hover {
 
 a button {
     all: unset; /* Quita los estilos heredados del enlace */
-    display: inline-block; /* Asegura que el botón conserve su apariencia */
+   
     cursor: pointer; /* Mantiene el puntero de botón */
 }
 
@@ -499,3 +500,4 @@ a:hover button {
     color: inherit; /* Evita cambios de color del texto del botón */
     background-color: inherit; /* Opcional, ajusta el fondo si fuera necesario */
 }
+
