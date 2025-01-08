@@ -382,24 +382,31 @@ strong, b {
 }
 
  /*--------------------------------------- boton whatsp ---------------------------- */
-.whatsapp-float {
+ .whatsapp-float {
     position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
     width: 60px;
     height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.whatsapp-float:hover {
+    background-color: #20b358;
 }
 
 .my-float {
-    margin-top: 16px;
+    font-size: 28px;
 }
+
  /*--------------------------------------- seccion pijamas ---------------------------- */
 /* Estilo para los títulos de las tarjetas */
 .product-title {
