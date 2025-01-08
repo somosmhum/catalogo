@@ -448,6 +448,8 @@ strong, b {
     display: block;
     width: 100%;
   }
+ 
+
   @media (max-width: 768px) {
   .btn-pijamas {
     width: 100%; /* Asegura que los botones ocupen el 100% del ancho en dispositivos móviles */
@@ -477,4 +479,23 @@ strong, b {
     border-radius: 20%;                  /* Hace que sea un círculo (opcional) */
     font-size: 14px;                     /* Cambia el tamaño del texto */
     padding: 5px 10px;                   /* Ajusta el tamaño del badge */
+}
+a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: inherit; /* Mantiene el color del enlace según su contenedor */
+}
+
+a:hover {
+    color: inherit; /* Evita que el color cambie al pasar el mouse */
+}
+
+a button {
+    all: unset; /* Quita los estilos heredados del enlace */
+    display: inline-block; /* Asegura que el botón conserve su apariencia */
+    cursor: pointer; /* Mantiene el puntero de botón */
+}
+
+a:hover button {
+    color: inherit; /* Evita cambios de color del texto del botón */
+    background-color: inherit; /* Opcional, ajusta el fondo si fuera necesario */
 }
