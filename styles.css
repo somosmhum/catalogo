@@ -521,16 +521,10 @@ a:hover button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+   
   text-align: center;
 }
-.map-container {
-    margin: 20px 0;
-}
-.map-info {
-    text-align: left;
-    margin-top: 20px;
-}
+
 
 .mapa-argentina {
     max-height: 500px; /* Limita la altura máxima de la imagen */
@@ -543,8 +537,3 @@ a:hover button {
     min-height: 500px; /* Asegura que la sección de contacto ocupe una altura mínima */
 }
 
-/* Estilo simple para el footer */
-footer {
-    text-align: center; /* Centra el texto */
-    padding: 10px 0; /* Añade un poco de espacio alrededor del texto */
-}
