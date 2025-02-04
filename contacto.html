@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light custom-bg">
@@ -43,25 +45,31 @@
         <div class="container">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="https://somosmhum.github.io/catalogo/index.html">Inicio</a></li>
-                
+
                 <li class="breadcrumb-item active" aria-current="page">Contacto</li>
             </ol>
         </div>
     </nav>
-    <!-- Sección de Contacto -->
-<section id="contacto" class="contacto-container">
-    <div class="mapa-info">
-        <h2>Zonas de Venta</h2>
-        <p>Realizamos envíos a todo el país.</p>
-    </div>
+    <section class="contacto">
+        <h2>Contacto</h2>
+        <p>¡Enviamos a todo el país! Contáctanos para más información.</p>
 
-    <div class="mapa-argentina">
-        <iframe src="https://www.google.com/maps/d/embed?mid=TU_ID_DEL_MAPA" 
-                width="100%" 
-                height="480" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-        </iframe>
-    </div>
-</section>
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="map-info">
+                <h3>Zonas de Venta</h3>
+                <ul>
+                    <li>📍 Orán, Salta</li>
+                    <li>📍 Córdoba, Córdoba</li>
+                    <li>📍 Salta Capital</li>
+                </ul>
+                <p>Hacemos envíos a todo Argentina.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

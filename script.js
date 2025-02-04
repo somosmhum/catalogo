@@ -73,5 +73,26 @@ const products = {
       document.getElementById("product-details").scrollIntoView({ behavior: "smooth" });
     });
   });
-/*--------------------------------------- seccion whatsp ---------------------------- */
+/*--------------------------------------- seccion contacto ---------------------------- */
 
+// Inicializar el mapa centrado en Argentina
+var map = L.map('map').setView([-31.4167, -64.1833], 5);
+
+// Agregar mapa base de OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Zonas de venta con coordenadas
+var zonasDeVenta = [
+    { nombre: "Orán, Salta", coordenadas: [-23.137, -64.324] },
+    { nombre: "Córdoba, Córdoba", coordenadas: [-31.4167, -64.1833] },
+    { nombre: "Salta Capital", coordenadas: [-24.782, -65.4232] }
+];
+
+// Agregar marcadores al mapa
+zonasDeVenta.forEach(zona => {
+    L.marker(zona.coordenadas)
+        .addTo(map)
+        .bindPopup(<b>${zona.nombre}</b>);
+});
