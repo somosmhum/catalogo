@@ -531,3 +531,20 @@ a:hover button {
     text-align: left;
     margin-top: 20px;
 }
+
+.mapa-argentina {
+    max-height: 500px; /* Limita la altura máxima de la imagen */
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho de su contenedor */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilos para el contenedor de contacto */
+.contacto {
+    min-height: 500px; /* Asegura que la sección de contacto ocupe una altura mínima */
+}
+
+/* Estilo simple para el footer */
+footer {
+    text-align: center; /* Centra el texto */
+    padding: 10px 0; /* Añade un poco de espacio alrededor del texto */
+}
