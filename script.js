@@ -73,4 +73,20 @@ const products = {
       document.getElementById("product-details").scrollIntoView({ behavior: "smooth" });
     });
   });
-/*--------------------------------------- seccion pijamas ---------------------------- */
+/*--------------------------------------- seccion whatsp ---------------------------- */
+
+const whatsappBtn = document.getElementById('whatsappBtn');
+const whatsappMenu = document.getElementById('whatsappMenu');
+
+// Alternar el menú al hacer clic en el botón
+whatsappBtn.addEventListener('click', (event) => {
+    event.stopPropagation(); // Evita que el clic se propague al documento
+    whatsappMenu.style.display = (whatsappMenu.style.display === 'block') ? 'none' : 'block';
+});
+
+// Ocultar el menú al hacer clic fuera de él
+document.addEventListener('click', (event) => {
+    if (!whatsappBtn.contains(event.target) && !whatsappMenu.contains(event.target)) {
+        whatsappMenu.style.display = 'none';
+    }
+});

@@ -382,29 +382,44 @@ strong, b {
 }
 
  /*--------------------------------------- boton whatsp ---------------------------- */
- .whatsapp-float {
+ .whatsapp-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25d366;
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
     z-index: 1000;
 }
 
-.whatsapp-float:hover {
-    background-color: #20b358;
+.whatsapp-float {
+    background-color: #25D366;
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.my-float {
-    font-size: 28px;
+.whatsapp-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    bottom: 60px; /* Aparece arriba del botón */
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.whatsapp-menu a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.3s;
+}
+
+.whatsapp-menu a:hover {
+    background-color: #d5786a;
 }
 
  /*--------------------------------------- seccion pijamas ---------------------------- */
