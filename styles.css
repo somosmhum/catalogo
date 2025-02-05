@@ -537,6 +537,10 @@ a:hover button {
     min-height: 500px; /* Asegura que la sección de contacto ocupe una altura mínima */
 }
 /*--------------------------------------- toalla ---------------------------- */
+.toalla-img {
+    content: url('https://somosmhum.github.io/catalogo/RECURSOS/toalla.png'); /* Imagen por defecto */
+}
+
 @media (max-width: 768px) {
     .toalla-img {
         content: url('https://somosmhum.github.io/catalogo/RECURSOS/toallamobile.png'); /* Imagen para móviles */
