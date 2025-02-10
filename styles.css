@@ -237,6 +237,7 @@ strong, b {
 @media (max-width: 768px) {
     #quienes-somos {
         padding: 20px; /* Ajusta el padding para móviles */
+        flex: 1
     }
     .fs-5 {
         font-size: 1rem; /* Ajusta el tamaño de fuente para móviles */
@@ -247,6 +248,7 @@ strong, b {
     .text-justify {
         text-align: justify
     }
+    
 }
 /*--------------------------------------- seccion tabla de talles ---------------------------- */
 /* Fondo de la sección "Tabla de Talles" */
