@@ -227,7 +227,7 @@ nav .navbar-logo {
 }
 
 /*--------------------------------------- seccion quienes somos ---------------------------- */
-strong, b {
+ b {
     color: #d5786a; /* Cambiar el color a #d5786a */
 }
 .text-justify {
