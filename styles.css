@@ -549,3 +549,19 @@ a:hover button {
         content: url('https://somosmhum.github.io/catalogo/RECURSOS/toallamobile.png'); /* Imagen para móviles */
     }
 }
+
+/* Estilos para la galería de imágenes */
+.galeria-pijama img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Diseño responsivo para móviles */
+@media (max-width: 576px) {
+    .galeria-pijama .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
