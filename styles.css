@@ -541,12 +541,12 @@ a:hover button {
 }
 /*--------------------------------------- toalla ---------------------------- */
 .toalla-img {
-    content: url('https://somosmhum.github.io/catalogo/RECURSOS/toalla.png'); /* Imagen por defecto */
+    content: url('https://somosmhum.github.io/catalogo/RECURSOS/mododeuso.jpg'); /* Imagen por defecto */
 }
 
 @media (max-width: 768px) {
     .toalla-img {
-        content: url('https://somosmhum.github.io/catalogo/RECURSOS/toallamobile.png'); /* Imagen para móviles */
+        content: url('https://somosmhum.github.io/catalogo/RECURSOS/mododeuso.jpg'); /* Imagen para móviles */
     }
 }
 
