@@ -52,29 +52,41 @@
         </div>
     </nav>
     <!-- Tarjeta de producto con 4 imágenes en grilla -->
-<div class="container my-4">
-    <div class="card p-3">
-        <div class="row g-2 galeria-pijama">
-            <div class="col-12 col-sm-6 col-md-3">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/toalla1.jpg" class="img-fluid rounded" alt="Imagen 1">
+    <div class="container my-4">
+        <div class="card p-3">
+            <!-- Carrusel de imágenes -->
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://somosmhum.github.io/catalogo/RECURSOS/toalla1.jpg" class="d-block w-100 img-fluid rounded" alt="Imagen 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://somosmhum.github.io/catalogo/RECURSOS/toalla2.jpg" class="d-block w-100 img-fluid rounded" alt="Imagen 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://somosmhum.github.io/catalogo/RECURSOS/toalla3.jpg" class="d-block w-100 img-fluid rounded" alt="Imagen 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://somosmhum.github.io/catalogo/RECURSOS/toalla4.jpg" class="d-block w-100 img-fluid rounded" alt="Imagen 4">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div class="col-12 col-sm-6 col-md-3">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/toalla2.jpg" class="img-fluid rounded" alt="Imagen 2">
+    
+            <div class="card-body text-center mt-3">
+                <h5 class="product-title">Toalla de Microfibra</h5>
+                <p class="card-text"><strong>Características:</strong> Confeccionado con toalla de microfibra, que absorbe la humedad más paulatinamente que la toalla de algodón tradicional, evitando el resecamiento del pelo y el frizz. Tiene elástico para mejorar el agarre.</p>
+                <p class="card-text"><strong>Precio:</strong> $9.000</p>
             </div>
-            <div class="col-12 col-sm-6 col-md-3">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/toalla3.jpg" class="img-fluid rounded" alt="Imagen 3">
-            </div>
-            <div class="col-12 col-sm-6 col-md-3">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/toalla4.jpg" class="img-fluid rounded" alt="Imagen 4">
-            </div>
-        </div>
-        <div class="card-body text-center mt-3">
-            <h5 class="product-title">Toalla de Microfibra</h5>
-            <p class="card-text"><strong>Características:</strong> Confeccionado con toalla de microfibra, que absorve la humedad mas paulatinamente que la toalla de algodón tradicional, evitando el resecamiento del pelo y el frizz. Tiene elástico para mejorar el agarre.</p>
-            <p class="card-text"><strong>Precio:</strong> $9.000</p>
         </div>
     </div>
-</div>
 <!-- Imagen principal -->
 <div class="container my-5">
     <img src="https://somosmhum.github.io/catalogo/RECURSOS/mododeuso.jpg" alt="Toallas de Microfibra"
@@ -87,7 +99,8 @@
     </footer>
     <!-- Bootstrap JS -->
     <!-- Script para cerrar el menú -->
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
     </script>
 
     <script src="https://somosmhum.github.io/catalogo/script.js"></script> <!-- Enlace a tu archivo JavaScript -->
