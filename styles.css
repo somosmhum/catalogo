@@ -565,3 +565,11 @@ a:hover button {
         max-width: 100%;
     }
 }
+.card.custom-size {
+  max-width: 380px;
+  margin: auto;
+}
+.card.custom-size img {
+  height: auto;
+  object-fit: cover;
+}
