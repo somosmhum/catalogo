@@ -573,3 +573,108 @@ a:hover button {
   height: auto;
   object-fit: cover;
 }
+
+/* Hero base */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url('./recursos/hero-fondo1.png') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  overflow: hidden;
+}
+
+/* Contenido */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 40%;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-family: serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin: 0 0 1rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero-content p {
+  font-family: sans-serif;
+  font-size: 1.125rem;
+  margin: 0 0 2rem;
+  line-height: 1.5;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
+
+.btn-hero {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid #d5786a;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-hero:hover {
+  background: rgba(255,255,255,0.4);
+  color: #000;
+}
+
+/* Media queries */
+
+/* Tablets y pantallas pequeñas */
+@media (max-width: 768px) {
+  .hero {
+    padding-left: 4%;
+    min-height: 80vh;
+     background-image: url('./recursos/hero-mobile.png');
+    background-size: cover;         /* sigue llenando todo el contenedor */
+    background-position: top center;/* ajusta el recorte para que muestre la zona clave */
+  }
+  /* Mobile: usamos el recorte vertical para que se vea entero */
+
+  .hero-content {
+    max-width: 60%;
+  }
+  .hero-content h1 {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .btn-hero {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Móviles (smartphones) */
+@media (max-width: 480px) {
+  .hero {
+    padding-left: 5%;
+    min-height: 70vh;
+    background-position: center top;
+  }
+  .hero-content {
+    max-width: 90%;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  .btn-hero {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
