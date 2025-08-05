@@ -579,7 +579,7 @@ a:hover button {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: url('./recursos/hero-fondo1.png') center center/cover no-repeat;
+  background: url('https://somosmhum.github.io/catalogo/hero-fondo1.html') center center/cover no-repeat;
   display: flex;
   align-items: center;
   padding-left: 5%;
@@ -634,7 +634,7 @@ a:hover button {
   .hero {
     padding-left: 4%;
     min-height: 80vh;
-     background-image: url('./recursos/hero-mobile.png');
+     background-image: url('https://somosmhum.github.io/catalogo/hero-mobile.html');
     background-size: cover;         /* sigue llenando todo el contenedor */
     background-position: top center;/* ajusta el recorte para que muestre la zona clave */
   }
