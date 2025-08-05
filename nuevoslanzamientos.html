@@ -111,14 +111,11 @@
                  class="thumb active rounded"
                  data-full="https://somosmhum.github.io/catalogo/RECURSOS/remera-florcitas.jpg"
                  alt="Remera frontal">
+            <img src="https://somosmhum.github.io/catalogo/RECURSOS/remera-florcitas1.jpg"
+                 class="thumb rounded"
+                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/remera-florcitas1.jpg"
+                 alt="Remera detalle">
           </div>
-           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/remera-florcitas1.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/remera-florcitas1.jpg"
-              alt="Pantalón con bolsillos"
-            >
           <div class="card-body">
             <h5 class="product-title">Remera manga corta floreada</h5>
             <p><strong>Precio:</strong> $22.200</p>
@@ -194,7 +191,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -228,7 +224,7 @@
           .forEach(col => col.style.display = (cat === 'all' || col.dataset.category === cat) ? 'block' : 'none');
       });
 
-      // Miniaturas → actualizar imagen principal y data-bs-src
+      // Miniaturas → actualizar principal y data-bs-src
       document.querySelectorAll('.card-nuevos').forEach(card => {
         const mainImg = card.querySelector('.main-image');
         card.querySelectorAll('.thumb').forEach(thumb => {
