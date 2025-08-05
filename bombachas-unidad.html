@@ -2,175 +2,302 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pack bombachas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bombachas Pack – Catálogo Somos.mhum</title>
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Tus estilos personalizados -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light custom-bg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://somosmhum.github.io/catalogo/index.html">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
-            </a>
-            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://somosmhum.github.io/catalogo/quienes-somos.html">Quiénes
-                            Somos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://somosmhum.github.io/catalogo/como-comprar.html">Como comprar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://somosmhum.github.io/catalogo/tabladetalles.html">Tabla de
-                            Talles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://somosmhum.github.io/catalogo/contacto.html">Contacto</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-   <!-- Breadcrumb -->
-   <nav aria-label="breadcrumb" class="bg-light py-2">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light custom-bg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://somosmhum.github.io/catalogo/index.html">
+        <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
+      </a>
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="como-comprar.html">Cómo comprar</a></li>
+          <li class="nav-item"><a class="nav-link" href="tabladetalles.html">Tabla de Talles</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <nav aria-label="breadcrumb" class="bg-light py-2">
     <div class="container">
-        <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="https://somosmhum.github.io/catalogo/index.html">Inicio</a></li>
-            <li class="breadcrumb-item"><a href="https://somosmhum.github.io/catalogo/ropainterior.html">Ropa interior</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Bombachas pack</li>
-        </ol>
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="ropainterior.html">Ropa interior</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Bombachas pack</li>
+      </ol>
     </div>
-</nav>
+  </nav>
 
-<!-- Contenido Principal -->
-<div class="container my-5">
-    <h1 class="text-center mb-4">Bombachas (por unidad) </h1>
+  <!-- Contenido Principal -->
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Bombachas (por unidad)</h1>
 
-    <!-- Barra de Filtro -->
+    <!-- Filtro -->
     <div class="mb-4">
-        <label for="filter" class="form-label"><strong>Filtrar por categoría:</strong></label>
-        <select id="filter" class="form-select">
-          <option value="all">Todos</option>
-          <option value="Negro">Negro</option>
-          <option value="blanco">Blanco</option>
-          
-        </select>
+      <label for="filter" class="form-label"><strong>Filtrar por categoría:</strong></label>
+      <select id="filter" class="form-select">
+        <option value="all">Todos</option>
+        <option value="Negro">Negro</option>
+        <option value="Blanco">Blanco</option>
+      </select>
     </div>
 
-    <!-- Contenedor de bombachas unidad -->
+    <!-- Productos -->
     <div id="product-container" class="row row-cols-1 row-cols-md-3 g-4">
-        <!-- Producto 1 -->
-        <div class="col" data-category="liso">
-            <div class="card h-100">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon.jpg" class="card-img-top" alt="Pijama Liso">
-                <div class="card-body">
-                    <h5 class="product-title"> Colales/vedetina algodon</h5>
-                    <p><strong>Precio:</strong> $10.000</p>
-                    <p><strong>Color:</strong> Blanco, Beige, Negro, Gris, Gris oscuro</p>
-                    <p><strong>Talles:</strong> 1, 2, 3, 4</p>
-                    <p><strong>Características:</strong> Bombacha  tiro medio, confeccionada de lycra de algodon.</p>
-                </div>
-            </div>
+      <!-- Producto 1 -->
+      <div class="col" data-category="Negro">
+        <div class="card h-100 card-pack">
+          <div class="card-img-top">
+            <img
+              src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon.jpg"
+              class="main-image w-100"
+              alt="Colaless algodón"
+              data-bs-toggle="modal"
+              data-bs-target="#packsImageModal"
+              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon.jpg"
+            >
+          </div>
+          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
+            <img
+              src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon.jpg"
+              class="thumb active"
+              data-full="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon.jpg"
+              alt="Colaless algodón"
+            >
+          </div>
+          <div class="card-body">
+            <h5 class="product-title">Colaless/Vedetina Algodón</h5>
+            <p><strong>Precio:</strong> $10.000</p>
+            <p><strong>Color:</strong> Blanco, Beige, Negro, Gris, Gris oscuro</p>
+            <p><strong>Talles:</strong> 1, 2, 3, 4</p>
+            <p><strong>Características:</strong> Bombacha tiro medio, confeccionada de lycra de algodón.</p>
+          </div>
         </div>
-        <!-- Producto 2 -->
-        <div class="col" data-category="liso">
-            <div class="card h-100">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon-puntilla.jpg" class="card-img-top" alt="Pijama Liso Negro">
-                <div class="card-body">
-                    <h5 class="product-title">Colales/vedetina algodon con detalles de puntilla</h5>
-                    <p><strong>Precio:</strong> $10.300</p>
-                    <p><strong>Color:</strong> Blanco, Beige, Negro, Gris, Gris oscuro</p>
-                    <p><strong>Talles:</strong> 1, 2, 3, 4</p>
-                    <p><strong>Características:</strong> Bombacha tiro medio, confeccionada de lycra de algodon. Detalles de puntilla al tono.</p>
-                </div>
-            </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="col" data-category="Negro">
+        <div class="card h-100 card-pack">
+          <div class="card-img-top">
+            <img
+              src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon-puntilla.jpg"
+              class="main-image w-100"
+              alt="Colaless algodón con puntilla"
+              data-bs-toggle="modal"
+              data-bs-target="#packsImageModal"
+              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon-puntilla.jpg"
+            >
+          </div>
+          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
+            <img
+              src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon-puntilla.jpg"
+              class="thumb active"
+              data-full="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon-puntilla.jpg"
+              alt="Colaless algodón con puntilla"
+            >
+          </div>
+          <div class="card-body">
+            <h5 class="product-title">Colaless Algodón con Puntilla</h5>
+            <p><strong>Precio:</strong> $10.300</p>
+            <p><strong>Color:</strong> Blanco, Beige, Negro, Gris, Gris oscuro</p>
+            <p><strong>Talles:</strong> 1, 2, 3, 4</p>
+            <p><strong>Características:</strong> Bombacha tiro medio, lycra de algodón con detalles de puntilla al tono.</p>
+          </div>
         </div>
-        <!-- Producto 3 -->
-        <div class="col" data-category="estampado">
-            <div class="card h-100">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/regulablevaleria-puntilla.jpg" class="card-img-top" alt="Pijama Estampado">
-                <div class="card-body">
-                    <h5 class="product-title"> Regulable Valeria Puntilla</h5>
-                    <p><strong>Precio:</strong> $10.500</p>
-                    <p><strong>Color:</strong> Blanco, Beige, Negro,Verde agua, Bordeau</p>
-                    <p><strong>Talles:</strong> Talle 1 (corresponde al talle 85-90), Talle 2 (corresponde al talle95-100)</p>
-                    <p><strong>Características:</strong> Bombacha regulable de puntilla, con microtool en espalda, tiras regulables con reguladores y arandelas metalicos, refuerzo de algodon en la zona intima.</p>
-                </div>
-            </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="col" data-category="Blanco">
+        <div class="card h-100 card-pack">
+          <div class="card-img-top">
+            <img
+              src="https://somosmhum.github.io/catalogo/RECURSOS/regulablevaleria-puntilla.jpg"
+              class="main-image w-100"
+              alt="Regulable Valeria Puntilla"
+              data-bs-toggle="modal"
+              data-bs-target="#packsImageModal"
+              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/regulablevaleria-puntilla.jpg"
+            >
+          </div>
+          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
+            <img
+              src="https://somosmhum.github.io/catalogo/RECURSOS/regulablevaleria-puntilla.jpg"
+              class="thumb active"
+              data-full="https://somosmhum.github.io/catalogo/RECURSOS/regulablevaleria-puntilla.jpg"
+              alt="Regulable Valeria Puntilla"
+            >
+          </div>
+          <div class="card-body">
+            <h5 class="product-title">Regulable Valeria Puntilla</h5>
+            <p><strong>Precio:</strong> $10.500</p>
+            <p><strong>Color:</strong> Blanco, Beige, Negro, Verde agua, Bordeaux</p>
+            <p><strong>Talles:</strong> 1 (85-90), 2 (95-100)</p>
+            <p><strong>Características:</strong> Bombacha regulable de puntilla, microtool en espalda, tiras regulables con reguladores metálicos, refuerzo de algodón.</p>
+          </div>
         </div>
-        <!-- Producto 4 -->
-        <div class="col" data-category="rayado">
-            <div class="card h-100">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-print.jpg" class="card-img-top" alt="Pijama Estampado">
-                <div class="card-body">
-                    <h5 class="product-title">Colales/vedetina Print</h5>
-                    <p><strong>Precio:</strong> $10.000</p>
-                    <p><strong>Color:</strong> Marron , Beige </p>
-                    <p><strong>Talles:</strong> 1, 2, 3, 4</p>
-                    <p><strong>Características:</strong> Bombacha tiro medio, confeccionada de morley estampado, refuerzo de algodon en la zona intima.</p>
-                </div>
-            </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="col" data-category="Blanco">
+        <div class="card h-100 card-pack">
+          <div class="card-img-top">
+            <img
+              src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-print.jpg"
+              class="main-image w-100"
+              alt="Colaless Vedetina Print"
+              data-bs-toggle="modal"
+              data-bs-target="#packsImageModal"
+              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-print.jpg"
+            >
+          </div>
+          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
+            <img
+              src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-print.jpg"
+              class="thumb active"
+              data-full="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-print.jpg"
+              alt="Colaless Vedetina Print"
+            >
+          </div>
+          <div class="card-body">
+            <h5 class="product-title">Colaless/Vedetina Print</h5>
+            <p><strong>Precio:</strong> $10.000</p>
+            <p><strong>Color:</strong> Marrón, Beige</p>
+            <p><strong>Talles:</strong> 1, 2, 3, 4</p>
+            <p><strong>Características:</strong> Morley estampado, bombacha tiro medio con refuerzo de algodón.</p>
+          </div>
         </div>
-         <!-- Producto 5 -->
-        <div class="col" data-category="liso">
-            <div class="card h-100">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/colales-blancoynegro.jpeg" class="card-img-top" alt="Pijama Estampado">
-                <div class="card-body">
-                    <h5 class="product-title"> Colales Blanco y Negro</h5>
-                    <p><strong>Precio:</strong> $10.000</p>
-                    <p><strong>Color:</strong> Blanco , Negro </p>
-                    <p><strong>Talles:</strong> 1, 2, 3, 4</p>
-                    <p><strong>Características:</strong> Bombacha tiro medio, confeccionada de lycra de algodon con recortes en delantero y espalda de puntilla, refuerzo de algodon en la zona intima.</p>
-                </div>
-            </div>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="col" data-category="Blanco">
+        <div class="card h-100 card-pack">
+          <div class="card-img-top">
+            <img
+              src="https://somosmhum.github.io/catalogo/RECURSOS/colales-blancoynegro.jpeg"
+              class="main-image w-100"
+              alt="Colaless Blanco y Negro"
+              data-bs-toggle="modal"
+              data-bs-target="#packsImageModal"
+              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/colales-blancoynegro.jpeg"
+            >
+          </div>
+          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
+            <img
+              src="https://somosmhum.github.io/catalogo/RECURSOS/colales-blancoynegro.jpeg"
+              class="thumb active"
+              data-full="https://somosmhum.github.io/catalogo/RECURSOS/colales-blancoynegro.jpeg"
+              alt="Colaless Blanco y Negro"
+            >
+          </div>
+          <div class="card-body">
+            <h5 class="product-title">Colaless Blanco y Negro</h5>
+            <p><strong>Precio:</strong> $10.000</p>
+            <p><strong>Color:</strong> Blanco, Negro</p>
+            <p><strong>Talles:</strong> 1, 2, 3, 4</p>
+            <p><strong>Características:</strong> Lycra de algodón con recortes de puntilla, refuerzo de algodón.</p>
+          </div>
         </div>
-        <!-- Producto 6 -->
-        <div class="col" data-category="liso">
-            <div class="card h-100">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/regulable-algodon.jpg" class="card-img-top" alt="Pijama Estampado">
-                <div class="card-body">
-                    <h5 class="product-title">Regulable Algodon</h5>
-                    <p><strong>Precio:</strong> $10.300</p>
-                    <p><strong>Color:</strong> Blanco, Beige, Negro, Gris melange </p>
-                    <p><strong>Talles:</strong> Talle 1 (corresponde al talle 85-90), Talle 2 (corresponde al talle95-100)</p>
-                    <p><strong>Características:</strong>Bombacha regulable de lycra de algodon, tiras regulables con reguladores y arandelas metalicos, refuerzo de algodon en la zona intima.</p>
-                </div>
-            </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="col" data-category="Blanco">
+        <div class="card h-100 card-pack">
+          <div class="card-img-top">
+            <img
+              src="https://somosmhum.github.io/catalogo/RECURSOS/regulable-algodon.jpg"
+              class="main-image w-100"
+              alt="Regulable Algodón"
+              data-bs-toggle="modal"
+              data-bs-target="#packsImageModal"
+              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/regulable-algodon.jpg"
+            >
+          </div>
+          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
+            <img
+              src="https://somosmhum.github.io/catalogo/RECURSOS/regulable-algodon.jpg"
+              class="thumb active"
+              data-full="https://somosmhum.github.io/catalogo/RECURSOS/regulable-algodon.jpg"
+              alt="Regulable Algodón"
+            >
+          </div>
+          <div class="card-body">
+            <h5 class="product-title">Regulable Algodón</h5>
+            <p><strong>Precio:</strong> $10.300</p>
+            <p><strong>Color:</strong> Blanco, Beige, Negro, Gris melange</p>
+            <p><strong>Talles:</strong> 1 (85-90), 2 (95-100)</p>
+            <p><strong>Características:</strong> Lycra de algodón, tiras regulables, refuerzo de algodón.</p>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<!-- Footer -->
-<footer>
-    <p>&copy; 2025 Somos.mhum / Catálogo . Todos los derechos reservados.</p>
-</footer>
-<!-- Bootstrap JS -->
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Modal Bootstrap para Bombachas Pack -->
+  <div class="modal fade" id="packsImageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-0">
+          <img id="packs-modal-img" src="" class="img-fluid w-100" alt="Ampliación">
+        </div>
+      </div>
+    </div>
+  </div>
 
-<script>
-    // Función para filtrar productos
-    document.getElementById('filter').addEventListener('change', function () {
-        const category = this.value;
-        const products = document.querySelectorAll('#product-container .col');
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <p>&copy; 2025 Somos.mhum / Catálogo. Todos los derechos reservados.</p>
+  </footer>
 
-        products.forEach(product => {
-            if (category === 'all' || product.getAttribute('data-category') === category) {
-                product.style.display = 'block';
-            } else {
-                product.style.display = 'none';
-            }
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Filtrar productos
+      document.getElementById('filter').addEventListener('change', function() {
+        const cat = this.value;
+        document.querySelectorAll('#product-container .col').forEach(col => {
+          col.style.display = (cat === 'all' || col.dataset.category === cat) ? 'block' : 'none';
         });
-    });
+      });
 
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      // Miniaturas → actualizar principal y data-bs-src
+      document.querySelectorAll('.card-pack').forEach(card => {
+        const mainImg = card.querySelector('.main-image');
+        card.querySelectorAll('.thumb').forEach(thumb => {
+          thumb.addEventListener('click', () => {
+            card.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+            mainImg.src = thumb.dataset.full;
+            mainImg.setAttribute('data-bs-src', thumb.dataset.full);
+          });
+        });
+      });
+
+      // Al abrir el modal, carga la imagen desde data-bs-src
+      const modalEl = document.getElementById('packsImageModal');
+      modalEl.addEventListener('show.bs.modal', event => {
+        const src = event.relatedTarget.getAttribute('data-bs-src');
+        document.getElementById('packs-modal-img').src = src;
+      });
+    });
+  </script>
 </body>
 </html>
