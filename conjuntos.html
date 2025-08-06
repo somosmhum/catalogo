@@ -6,15 +6,146 @@
   <title>Conjuntos – Catálogo Somos.mhum</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Tus estilos personalizados -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Estilos personalizados embebidos -->
+  <style>
+    /* RESET + TIPOGRAFÍA */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Roboto', sans-serif !important;
+    }
+    body {
+      display: flex; flex-direction: column; min-height: 100vh;
+    }
+    .content { flex: 1; }
+
+    /* NAVBAR */
+    .custom-bg { background-color: #343a40 !important; }
+    .navbar { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .navbar-logo { width: 120px; height: 60px; }
+    .nav-link {
+      font-size: 1.1rem; font-weight: 500;
+      color: #ffffff !important; transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #d5786a !important; font-weight: bold;
+    }
+    .custom-toggler .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      background-color: #f8f9fa; border-radius: 5px;
+      padding: 0.5rem 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .breadcrumb-item + .breadcrumb-item::before {
+      content: '>'; color: #6c757d; margin: 0 0.5rem;
+    }
+    .breadcrumb-item a {
+      color: #343a40; text-decoration: none; font-weight: 500;
+      transition: color 0.3s;
+    }
+    .breadcrumb-item a:hover { color: #d5786a; }
+    .breadcrumb-item.active {
+      color: #6c757d; font-weight: bold;
+    }
+
+    /* CARD & THUMBS */
+.card-conjuntos {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Imagen principal con altura fija y cover */
+.card-conjuntos .card-img-top .main-image {
+  width: 100%;
+  height: 250px;           /* ajusta este valor si lo necesitas */
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.card-conjuntos .card-img-top .main-image:hover {
+  transform: scale(1.05);
+}
+
+/* Miniaturas sin estirar */
+.card-conjuntos .thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  flex-shrink: 0;
+}
+
+/* Encabezado de la card */
+.card-conjuntos .product-title {
+  display: block;
+  background-color: #343a40;    /* fondo oscuro */
+  color: #d5786a;               /* texto coral */
+  margin: 0 -1px 1rem;          /* corrige márgenes laterales y espaciado abajo */
+  padding: 0.75rem 1rem;        /* espacio interno */
+  font-size: 1.25rem;           /* tamaño de texto */
+  text-align: center;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+/* Ajusta el body para que no sobresalga tras el header */
+.card-conjuntos .card-body {
+  flex: 1 1 auto;               /* ocupa el espacio restante */
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  padding-top: 0.5rem;
+}
+
+/* Opcional: empuja el último elemento (por ejemplo botones o precio) al fondo */
+.card-conjuntos .card-body > *:last-child {
+  margin-top: auto;
+}
+
+/* Asegura que la columna flex contenga la card a toda altura */
+#product-container .col {
+  display: flex;
+}
+
+
+    .thumbnails {
+      margin-top: .5rem; display: flex; justify-content: center; gap: .5rem;
+    }
+    .thumbnails img {
+      width: 60px; height: 60px; object-fit: cover;
+      border: 2px solid transparent; border-radius: 4px;
+      cursor: pointer; transition: border-color .2s;
+    }
+    .thumbnails img.active {
+      border-color: #0d6efd;
+    }
+
+    /* FILTRO */
+    .form-select { max-width: 300px; }
+
+    /* FOOTER */
+    footer {
+      background-color: #343a40; color: white;
+      text-align: center; padding: 20px 0; margin-top: auto;
+    }
+
+    /* RESPONSIVE IMAGES */
+    @media (max-width: 768px) {
+      .thumbnails img { width: 50px; height: 50px; }
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light custom-bg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="https://somosmhum.github.io/catalogo/index.html">
-        <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
+      <a class="navbar-brand" href="index.html">
+        <img src="RECURSOS/logo.png" alt="Logo" class="navbar-logo">
       </a>
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -48,9 +179,9 @@
     <h1 class="text-center mb-4">Conjuntos de Ropa Interior</h1>
 
     <!-- Filtro -->
-    <div class="mb-4">
+    <div class="mb-4 text-center">
       <label for="filter" class="form-label"><strong>Filtrar por categoría:</strong></label>
-      <select id="filter" class="form-select">
+      <select id="filter" class="form-select mx-auto">
         <option value="all">Todos</option>
         <option value="Negro">Negro</option>
         <option value="Blanco">Blanco</option>
@@ -59,208 +190,152 @@
 
     <!-- Productos -->
     <div id="product-container" class="row row-cols-1 row-cols-md-3 g-4">
-      <!-- Producto 1: Conjunto María -->
+      <!-- Conjunto María -->
       <div class="col" data-category="Negro">
         <div class="card h-100 card-conjuntos">
           <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/mariaprincipal.jpg"
-              class="main-image w-100"
+              src="RECURSOS/mariaprincipal.jpg"
+              class="main-image"
               alt="Conjunto María"
               data-bs-toggle="modal"
               data-bs-target="#conjuntosImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/mariaprincipal.jpg"
+              data-bs-src="RECURSOS/mariaprincipal.jpg"
             >
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/marianegro.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/marianegro.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/mariablanco.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/mariablanco.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/marianude.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/marianude.jpg"
-                 alt="">
-                  <img src="https://somosmhum.github.io/catalogo/RECURSOS/conjunto-maria-espalda.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/conjunto-maria-espalda.jpg"
-                 alt="">
-                  <img src="https://somosmhum.github.io/catalogo/RECURSOS/conjunto-maria-frente.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/conjunto-maria-frente.jpg"
-                 alt="">
-                  <img src="https://somosmhum.github.io/catalogo/RECURSOS/conjunto-maria.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/conjunto-maria.jpg"
-                 alt="">
+          <div class="thumbnails">
+            <img src="RECURSOS/marianegro.jpg" class="thumb" data-full="RECURSOS/marianegro.jpg" alt="">
+            <img src="RECURSOS/mariablanco.jpg" class="thumb" data-full="RECURSOS/mariablanco.jpg" alt="">
+            <img src="RECURSOS/marianude.jpg" class="thumb" data-full="RECURSOS/marianude.jpg" alt="">
+            <img src="RECURSOS/conjunto-maria-espalda.jpg" class="thumb" data-full="RECURSOS/conjunto-maria-espalda.jpg" alt="">
+            <img src="RECURSOS/conjunto-maria-frente.jpg" class="thumb" data-full="RECURSOS/conjunto-maria-frente.jpg" alt="">
+            <img src="RECURSOS/conjunto-maria.jpg" class="thumb" data-full="RECURSOS/conjunto-maria.jpg" alt="">
           </div>
           <div class="card-body">
             <h5 class="product-title">Conjunto María</h5>
             <p><strong>Precio:</strong> $33.500</p>
             <p><strong>Color:</strong> Blanco, Negro, Beige, Nude, Rosa</p>
             <p><strong>Talles:</strong> 1, 2, 3, 4, 5</p>
-            <p><strong>Características:</strong> Corpiño de puntilla falso aro, con elástico en el busto y bombacha de lycra de algodón cola less con detalles de puntilla.</p>
+            <p><strong>Características:</strong> Corpiño de puntilla falso aro, elástico en busto y bombacha cola less con puntilla.</p>
           </div>
         </div>
       </div>
 
-      <!-- Producto 2: Conjunto Sofía -->
+      <!-- Conjunto Sofía -->
       <div class="col" data-category="Blanco">
         <div class="card h-100 card-conjuntos">
           <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/sofiablanco.jpg"
-              class="main-image w-100"
+              src="RECURSOS/sofiablanco.jpg"
+              class="main-image"
               alt="Conjunto Sofía"
               data-bs-toggle="modal"
               data-bs-target="#conjuntosImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/sofiablanco.jpg"
+              data-bs-src="RECURSOS/sofiablanco.jpg"
             >
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/sofiablanco.jpg"
-                 class="thumb active"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/sofiablanco.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/sofianegro.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/sofianegro.jpg"
-                 alt="">
+          <div class="thumbnails">
+            <img src="RECURSOS/sofiablanco.jpg" class="thumb active" data-full="RECURSOS/sofiablanco.jpg" alt="">
+            <img src="RECURSOS/sofianegro.jpg" class="thumb" data-full="RECURSOS/sofianegro.jpg" alt="">
           </div>
           <div class="card-body">
             <h5 class="product-title">Conjunto Sofía</h5>
             <p><strong>Precio:</strong> $30.000</p>
             <p><strong>Color:</strong> Blanco, Negro, Beige</p>
             <p><strong>Talles:</strong> 1, 2, 3, 4</p>
-            <p><strong>Características:</strong> Corpiño de microtool con detalle en puntilla, bombacha vedetina regulable de seda fría y microtol en espalda.</p>
+            <p><strong>Características:</strong> Corpiño de microtool con puntilla, bombacha vedetina regulable.</p>
           </div>
         </div>
       </div>
 
-      <!-- Producto 3: Conjunto Eugenia -->
+      <!-- Conjunto Eugenia -->
       <div class="col" data-category="Blanco">
         <div class="card h-100 card-conjuntos">
           <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/eugenianegro.jpg"
-              class="main-image w-100"
+              src="RECURSOS/eugenianegro.jpg"
+              class="main-image"
               alt="Conjunto Eugenia"
               data-bs-toggle="modal"
               data-bs-target="#conjuntosImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/eugenianegro.jpg"
+              data-bs-src="RECURSOS/eugenianegro.jpg"
             >
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/eugenianegro.jpg"
-                 class="thumb active"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/eugenianegro.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/eugeniablanco.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/eugeniablanco.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/eugeniablanco1.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/eugeniablanco1.jpg"
-                 alt="">
+          <div class="thumbnails">
+            <img src="RECURSOS/eugenianegro.jpg" class="thumb active" data-full="RECURSOS/eugenianegro.jpg" alt="">
+            <img src="RECURSOS/eugeniablanco.jpg" class="thumb" data-full="RECURSOS/eugeniablanco.jpg" alt="">
+            <img src="RECURSOS/eugeniablanco1.jpg" class="thumb" data-full="RECURSOS/eugeniablanco1.jpg" alt="">
           </div>
           <div class="card-body">
             <h5 class="product-title">Conjunto Eugenia</h5>
             <p><strong>Precio:</strong> $33.500</p>
             <p><strong>Color:</strong> Blanco, Negro, Beige</p>
             <p><strong>Talles:</strong> 1, 2, 3, 4</p>
-            <p><strong>Características:</strong> Corpiño de microtool forrado en puntilla, bombacha colaless de lycra de algodón con detalle de puntilla en los costados.</p>
+            <p><strong>Características:</strong> Corpiño de microtool forrado en puntilla, bombacha colaless con puntilla.</p>
           </div>
         </div>
       </div>
 
-      <!-- Producto 4: Conjunto Macarena -->
+      <!-- Conjunto Macarena -->
       <div class="col" data-category="Blanco">
         <div class="card h-100 card-conjuntos">
           <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/macarena-blanco.jpg"
-              class="main-image w-100"
+              src="RECURSOS/macarena-blanco.jpg"
+              class="main-image"
               alt="Conjunto Macarena"
               data-bs-toggle="modal"
               data-bs-target="#conjuntosImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/macarena-blanco.jpg"
+              data-bs-src="RECURSOS/macarena-blanco.jpg"
             >
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/macarena-blanco.jpg"
-                 class="thumb active"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/macarena-blanco.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/macarena-negro.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/macarena-negro.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/macarena-beige.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/macarena-beige.jpg"
-                 alt="">
-                 
+          <div class="thumbnails">
+            <img src="RECURSOS/macarena-blanco.jpg" class="thumb active" data-full="RECURSOS/macarena-blanco.jpg" alt="">
+            <img src="RECURSOS/macarena-negro.jpg" class="thumb" data-full="RECURSOS/macarena-negro.jpg" alt="">
+            <img src="RECURSOS/macarena-beige.jpg" class="thumb" data-full="RECURSOS/macarena-beige.jpg" alt="">
           </div>
           <div class="card-body">
             <h5 class="product-title">Conjunto Macarena</h5>
             <p><strong>Precio:</strong> $34.500</p>
             <p><strong>Color:</strong> Blanco, Negro, Beige</p>
             <p><strong>Talles:</strong> 1, 2, 3, 4</p>
-            <p><strong>Características:</strong> Remera de jersey de algodón con detalle de puntilla en escote y sisa, tiras regulables con arandelas y reguladores de plástico. Bombacha colaless de puntilla y microtol, tiro medio, con refuerzo de algodón en la zona íntima.</p>
+            <p><strong>Características:</strong> Remera de jersey con puntilla, bombacha colaless de microtool.</p>
           </div>
         </div>
       </div>
 
-      <!-- Producto 5: Conjunto Inés -->
+      <!-- Conjunto Inés -->
       <div class="col" data-category="Blanco">
         <div class="card h-100 card-conjuntos">
           <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/ines.jpg"
-              class="main-image w-100"
+              src="RECURSOS/ines.jpg"
+              class="main-image"
               alt="Conjunto Inés"
               data-bs-toggle="modal"
               data-bs-target="#conjuntosImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/ines.jpg"
+              data-bs-src="RECURSOS/ines.jpg"
             >
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/ines.jpg"
-                 class="thumb active"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/ines.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/ines1.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/ines1.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/ines2.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/ines2.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/ines3.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/ines3.jpg"
-                 alt="">
+          <div class="thumbnails">
+            <img src="RECURSOS/ines.jpg" class="thumb active" data-full="RECURSOS/ines.jpg" alt="">
+            <img src="RECURSOS/ines1.jpg" class="thumb" data-full="RECURSOS/ines1.jpg" alt="">
+            <img src="RECURSOS/ines2.jpg" class="thumb" data-full="RECURSOS/ines2.jpg" alt="">
+            <img src="RECURSOS/ines3.jpg" class="thumb" data-full="RECURSOS/ines3.jpg" alt="">
           </div>
           <div class="card-body">
             <h5 class="product-title">Conjunto Inés</h5>
             <p><strong>Precio:</strong> $32.000</p>
             <p><strong>Color:</strong> Negro</p>
             <p><strong>Talles:</strong> 1, 2, 3, 4</p>
-            <p><strong>Características:</strong> Corpiño de microtool con detalles print en terciopelo y forrado de microtol, elástico de 3,5 cm forrado en seda fría, bombacha colaless tiro medio del mismo material con refuerzo de algodón en la zona íntima y breteles anchos de 2 cm para un mejor agarre.</p>
+            <p><strong>Características:</strong> Corpiño de microtool con print, bombacha colaless con refuerzo.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Bootstrap Modal para Conjuntos -->
+  <!-- Modal Bootstrap para Conjuntos -->
   <div class="modal fade" id="conjuntosImageModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
@@ -290,8 +365,7 @@
           col.style.display = (cat === 'all' || col.dataset.category === cat) ? 'block' : 'none';
         });
       });
-
-      // Miniaturas → actualizar principal y data-bs-src
+      // Miniaturas → actualizar imagen principal y data-bs-src
       document.querySelectorAll('.card-conjuntos').forEach(card => {
         const mainImg = card.querySelector('.main-image');
         card.querySelectorAll('.thumb').forEach(thumb => {
@@ -303,8 +377,7 @@
           });
         });
       });
-
-      // Al abrir el modal, carga la imagen correcta
+      // Al abrir el modal, cargar la imagen correcta
       const modalEl = document.getElementById('conjuntosImageModal');
       modalEl.addEventListener('show.bs.modal', event => {
         const src = event.relatedTarget.getAttribute('data-bs-src');

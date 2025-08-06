@@ -1,20 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Remeras – Catálogo Somos.mhum</title>
+  <title>Remeras Manga Larga – Catálogo Somos.mhum</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Tus estilos personalizados -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Estilos integrados -->
+  <style>
+    /* RESET + TIPOGRAFÍA */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family:'Roboto',sans-serif!important; }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+
+    /* NAVBAR */
+    .custom-bg { background-color: #343a40 !important; }
+    .navbar { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .navbar-logo { width: 120px; height: 60px; }
+    .nav-link { font-size: 1.1rem; font-weight:500; color:#fff!important; transition:color .3s; }
+    .nav-link:hover { color:#d5786a!important; font-weight:bold; }
+    .custom-toggler .navbar-toggler-icon {
+      background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb { background-color:#f8f9fa; border-radius:5px; padding:.5rem 1rem; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    .breadcrumb-item+ .breadcrumb-item::before { content:'>'; color:#6c757d; margin:0 .5rem; }
+    .breadcrumb-item a { color:#343a40; text-decoration:none; font-weight:500; transition:color .3s; }
+    .breadcrumb-item a:hover { color:#d5786a; }
+    .breadcrumb-item.active { color:#6c757d; font-weight:bold; }
+
+    /* TARJETA */
+    .custom-size { max-width:380px; margin:auto; }
+    .card-remera { display:flex; flex-direction:column; justify-content:space-between; }
+    .card-remera img { transition:transform .3s ease; }
+    .card-remera img:hover { transform:scale(1.05); }
+
+    /* MINIATURAS */
+    .thumbnails img { width:60px; height:60px; object-fit:cover; cursor:pointer; border:2px solid transparent; border-radius:4px; transition:border-color .2s; }
+    .thumbnails img.active { border-color:#0d6efd; }
+
+    /* BOTONES */
+    .btn-custom { background-color:#d5786a; color:#fff; border:none; }
+    .btn-custom:hover { background-color:#b65a57; }
+
+    /* FOOTER */
+    footer { background-color:#343a40; color:#fff; padding:20px 0; text-align:center; margin-top:auto; }
+
+    /* MEDIA QUERIES */
+    @media(max-width:768px){
+      .row { display:flex; flex-wrap:wrap; flex-direction:column; }
+      .col-md-4, .col-md-6 { width:100%; margin-bottom:20px; }
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light custom-bg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="https://somosmhum.github.io/catalogo/index.html">
-        <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
+      <a class="navbar-brand" href="index.html">
+        <img src="RECURSOS/logo.png" alt="Logo" class="navbar-logo">
       </a>
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -38,7 +82,7 @@
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
         <li class="breadcrumb-item"><a href="pijama.html">Pijamas</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Remeras</li>
+        <li class="breadcrumb-item active" aria-current="page">Remeras Manga Larga</li>
       </ol>
     </div>
   </nav>
@@ -46,41 +90,24 @@
   <!-- Contenido Principal -->
   <div class="container my-5">
     <h1 class="text-center mb-4">Remeras Manga Larga</h1>
-
-    <!-- Contenedor de Productos -->
-    <div id="product-container" class="row row-cols-1 row-cols-md-3 g-4">
+    <div id="product-container" class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
       <!-- Producto: Remera Manga Larga -->
       <div class="col" data-category="liso">
         <div class="card h-100 custom-size card-remera">
           <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/mangalarga.jpg"
-              class="main-image w-100"
+              src="RECURSOS/mangalarga.jpg"
+              class="main-image w-100 rounded"
               alt="Remera Manga Larga"
               data-bs-toggle="modal"
               data-bs-target="#remeraImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/mangalarga.jpg"
+              data-bs-src="RECURSOS/mangalarga.jpg"
             >
           </div>
           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/mangalarga.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/mangalarga.jpg"
-              alt="Vista frontal"
-            >
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/mangalarga2.jpg"
-              class="thumb"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/mangalarga2.jpg"
-              alt="Detalle lateral"
-            >
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/mangalarganegra.jpg"
-              class="thumb"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/mangalarganegra.jpg"
-              alt="Versión negra"
-            >
+            <img src="RECURSOS/mangalarga.jpg" class="thumb active rounded" data-full="RECURSOS/mangalarga.jpg" alt="Frontal">
+            <img src="RECURSOS/mangalarga2.jpg" class="thumb rounded" data-full="RECURSOS/mangalarga2.jpg" alt="Detalle lateral">
+            <img src="RECURSOS/mangalarganegra.jpg" class="thumb rounded" data-full="RECURSOS/mangalarganegra.jpg" alt="Versión negra">
           </div>
           <div class="card-body">
             <h5 class="product-title">Remera Manga Larga</h5>
@@ -94,7 +121,7 @@
     </div>
   </div>
 
-  <!-- Modal Bootstrap para Remera -->
+  <!-- Modal Remera -->
   <div class="modal fade" id="remeraImageModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
@@ -117,7 +144,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Miniaturas → actualizar imagen principal y data-bs-src
+      // Miniaturas → actualizar principal y data-bs-src
       document.querySelectorAll('.card-remera').forEach(card => {
         const mainImg = card.querySelector('.main-image');
         card.querySelectorAll('.thumb').forEach(thumb => {
@@ -129,7 +156,6 @@
           });
         });
       });
-
       // Al abrir el modal, carga la imagen desde data-bs-src
       const modalEl = document.getElementById('remeraImageModal');
       modalEl.addEventListener('show.bs.modal', event => {

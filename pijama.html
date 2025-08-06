@@ -4,16 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pijamas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <title>Pijamas y Homewear – Catálogo Somos.mhum</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos embebidos -->
+    <style>
+      /* RESET + TIPOGRAFÍA */
+      * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto',sans-serif!important; }
+      body { display:flex; flex-direction:column; min-height:100vh; }
+
+      /* NAVBAR */
+      .custom-bg { background-color:#343a40!important; }
+      .navbar { box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+      .navbar-logo { width:120px; height:60px; }
+      .nav-link { font-size:1.1rem; font-weight:500; color:#fff!important; transition:color .3s; }
+      .nav-link:hover { color:#d5786a!important; font-weight:bold; }
+      .custom-toggler .navbar-toggler-icon {
+        background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      }
+
+      /* BREADCRUMB */
+      .breadcrumb { background-color:#f8f9fa; border-radius:5px; padding:.5rem 1rem; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+      .breadcrumb-item+ .breadcrumb-item::before { content:'>'; color:#6c757d; margin:0 .5rem; }
+      .breadcrumb-item a { color:#343a40; text-decoration:none; font-weight:500; transition:color .3s; }
+      .breadcrumb-item a:hover { color:#d5786a; }
+      .breadcrumb-item.active { color:#6c757d; font-weight:bold; }
+
+      /* SECCIÓN PIJAMA */
+      .pijama-section { background: url('RECURSOS/portadapijama.jpg') center/cover no-repeat; padding:150px 20px; border-radius:10px; }
+      .pijama-content { background-color:rgba(32,32,32,0.5); padding:20px; border-radius:10px; text-align:center; color:#fff; }
+
+      /* BOTONES PIJAMA */
+      .btn-pijamas { background-color:#c1b0d2; color:#000; border:none; transition:background .3s; }
+      .btn-pijamas:hover { background-color:#d5786a; color:#fff; }
+      @media(max-width:768px){ .btn-pijamas { width:100%; } }
+
+      /* FOOTER */
+      footer { background-color:#343a40; color:#fff; padding:20px 0; text-align:center; margin-top:auto; }
+
+      /* MEDIA QUERIES */
+      @media(max-width:768px){
+        .pijama-section { padding:80px 15px; }
+      }
+    </style>
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light custom-bg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="https://somosmhum.github.io/catalogo/index.html">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
+            <a class="navbar-brand" href="index.html">
+                <img src="RECURSOS/logo.png" alt="Logo" class="navbar-logo">
             </a>
             <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -22,69 +63,56 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://somosmhum.github.io/catalogo/quienes-somos.html">Quiénes
-                            Somos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://somosmhum.github.io/catalogo/como-comprar.html">Como comprar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://somosmhum.github.io/catalogo/tabladetalles.html">Tabla de
-                            Talles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://somosmhum.github.io/catalogo/contacto.html">Contacto</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="como-comprar.html">Cómo comprar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tabladetalles.html">Tabla de Talles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="bg-light py-2">
         <div class="container">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://somosmhum.github.io/catalogo/index.html">Inicio</a></li>
-                
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Pijamas y Homewear</li>
             </ol>
         </div>
     </nav>
+
+    <!-- Contenido Principal -->
     <div class="content">
         <div class="container my-5">
             <section id="pijama" class="pijama-section">
                 <div class="pijama-content">
-                    <h2 class="mb-4"></h2>
                     <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                        <a href="https://somosmhum.github.io/catalogo/pijamas.html">
-                            <button id="tablaTallesBtn" class="btn btn-pijamas px-4 py-2">Conjuntos verano</button>
-                          </a>
-                          <a href="https://somosmhum.github.io/catalogo/short.html">
-                            <button id="tablaTallesBtn" class="btn btn-pijamas px-4 py-2">Short</button>
-                          </a>
-                          <a href="https://somosmhum.github.io/catalogo/remeramangalarga.html">
-                            <button id="tablaTallesBtn" class="btn btn-pijamas px-4 py-2">Remera manga larga</button>
-                          </a>
-                          <a href="https://somosmhum.github.io/catalogo/pantalones.html">
-                            <button id="tablaTallesBtn" class="btn btn-pijamas px-4 py-2">Pantalones</button>
-                          </a>
-                        
+                        <a href="pijamas.html">
+                            <button class="btn btn-pijamas px-4 py-2">Conjuntos verano</button>
+                        </a>
+                        <a href="short.html">
+                            <button class="btn btn-pijamas px-4 py-2">Short</button>
+                        </a>
+                        <a href="remeramangalarga.html">
+                            <button class="btn btn-pijamas px-4 py-2">Remera manga larga</button>
+                        </a>
+                        <a href="pantalones.html">
+                            <button class="btn btn-pijamas px-4 py-2">Pantalones</button>
+                        </a>
                     </div>
                 </div>
             </section>
         </div>
     </div>
-    
-
-
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Somos.mhum / Catálogo . Todos los derechos reservados.</p>
+        <p>&copy; 2025 Somos.mhum / Catálogo. Todos los derechos reservados.</p>
     </footer>
+
     <!-- Bootstrap JS -->
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

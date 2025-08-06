@@ -6,19 +6,121 @@
   <title>Bombachas Pack – Catálogo Somos.mhum</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Tus estilos personalizados -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Integrated Custom Styles -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif !important;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .navbar { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .custom-bg { background-color: #343a40 !important; }
+    .navbar-logo { width: 120px; height: auto; }
+    .custom-toggler .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    .nav-link { color: #fff !important; transition: color .3s ease; }
+    .nav-link:hover { color: #d5786a !important; font-weight: bold; }
+    .breadcrumb {
+      background-color: #f8f9fa; border-radius: 5px;
+      padding: .5rem 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .breadcrumb-item + .breadcrumb-item::before { content:'>'; color:#6c757d; margin:0 .5rem; }
+    .breadcrumb-item a { color:#343a40; text-decoration:none; font-weight:500; }
+    .breadcrumb-item a:hover { color:#d5786a; }
+    .breadcrumb-item.active { color:#6c757d; font-weight:bold; }
+
+    /* === Aplica estilo de "Conjuntos" a .card-pack === */
+    .card-pack {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .card-pack .card-img-top .main-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .card-pack .card-img-top .main-image:hover {
+      transform: scale(1.05);
+    }
+    .card-pack .thumbnails {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+      margin: .5rem 0;
+      flex-shrink: 0;
+    }
+    .card-pack .thumbnails img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      transition: border-color .2s;
+    }
+    .card-pack .thumbnails img.active {
+      border-color: #d5786a !important;
+    }
+    .card-pack .product-title {
+      display: block;
+      background-color: #343a40;
+      color: #d5786a;
+      margin: 0 -1px 1rem;
+      padding: .75rem 1rem;
+      font-size: 1.25rem;
+      text-align: center;
+      border-top-left-radius: .25rem;
+      border-top-right-radius: .25rem;
+    }
+    .card-pack .card-body {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      padding-top: .5rem;
+    }
+    .card-pack .card-body > *:last-child {
+      margin-top: auto;
+    }
+    #product-container .col {
+      display: flex;
+    }
+
+    @media (max-width:768px) {
+      .card-pack .main-image {
+        height: 300px !important;
+      }
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: auto;
+    }
+  </style>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light custom-bg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="https://somosmhum.github.io/catalogo/index.html">
-        <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
+      <a class="navbar-brand" href="index.html">
+        <img src="RECURSOS/logo.png" alt="Logo" class="navbar-logo">
       </a>
-      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-              aria-label="Toggle navigation">
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -43,11 +145,9 @@
     </div>
   </nav>
 
-  <!-- Contenido Principal -->
+  <!-- Main Content -->
   <div class="container my-5">
     <h1 class="text-center mb-4">Bombachas (por unidad)</h1>
-
-    <!-- Filtro -->
     <div class="mb-4">
       <label for="filter" class="form-label"><strong>Filtrar por categoría:</strong></label>
       <select id="filter" class="form-select">
@@ -57,28 +157,23 @@
       </select>
     </div>
 
-    <!-- Productos -->
     <div id="product-container" class="row row-cols-1 row-cols-md-3 g-4">
-      <!-- Producto 1 -->
+      <!-- 1 -->
       <div class="col" data-category="Negro">
         <div class="card h-100 card-pack">
           <div class="card-img-top">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon.jpg"
-              class="main-image w-100"
-              alt="Colaless algodón"
-              data-bs-toggle="modal"
-              data-bs-target="#packsImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon.jpg"
-            >
+            <img src="RECURSOS/colalesvedetina-algodon.jpg"
+                 class="main-image"
+                 alt="Colaless algodón"
+                 data-bs-toggle="modal"
+                 data-bs-target="#packsImageModal"
+                 data-bs-src="RECURSOS/colalesvedetina-algodon.jpg">
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon.jpg"
-              alt="Colaless algodón"
-            >
+          <div class="thumbnails">
+            <img src="RECURSOS/colalesvedetina-algodon.jpg"
+                 class="active"
+                 data-full="RECURSOS/colalesvedetina-algodon.jpg"
+                 alt="">
           </div>
           <div class="card-body">
             <h5 class="product-title">Colaless/Vedetina Algodón</h5>
@@ -89,27 +184,22 @@
           </div>
         </div>
       </div>
-
-      <!-- Producto 2 -->
+      <!-- 2 -->
       <div class="col" data-category="Negro">
         <div class="card h-100 card-pack">
           <div class="card-img-top">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon-puntilla.jpg"
-              class="main-image w-100"
-              alt="Colaless algodón con puntilla"
-              data-bs-toggle="modal"
-              data-bs-target="#packsImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon-puntilla.jpg"
-            >
+            <img src="RECURSOS/colalesvedetina-algodon-puntilla.jpg"
+                 class="main-image"
+                 alt="Colaless algodón con puntilla"
+                 data-bs-toggle="modal"
+                 data-bs-target="#packsImageModal"
+                 data-bs-src="RECURSOS/colalesvedetina-algodon-puntilla.jpg">
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon-puntilla.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-algodon-puntilla.jpg"
-              alt="Colaless algodón con puntilla"
-            >
+          <div class="thumbnails">
+            <img src="RECURSOS/colalesvedetina-algodon-puntilla.jpg"
+                 class="active"
+                 data-full="RECURSOS/colalesvedetina-algodon-puntilla.jpg"
+                 alt="">
           </div>
           <div class="card-body">
             <h5 class="product-title">Colaless Algodón con Puntilla</h5>
@@ -120,58 +210,48 @@
           </div>
         </div>
       </div>
-
-      <!-- Producto 3 -->
+      <!-- 3 -->
       <div class="col" data-category="Blanco">
         <div class="card h-100 card-pack">
           <div class="card-img-top">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/regulablevaleria-puntilla.jpg"
-              class="main-image w-100"
-              alt="Regulable Valeria Puntilla"
-              data-bs-toggle="modal"
-              data-bs-target="#packsImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/regulablevaleria-puntilla.jpg"
-            >
+            <img src="RECURSOS/regulablevaleria-puntilla.jpg"
+                 class="main-image"
+                 alt="Regulable Valeria Puntilla"
+                 data-bs-toggle="modal"
+                 data-bs-target="#packsImageModal"
+                 data-bs-src="RECURSOS/regulablevaleria-puntilla.jpg">
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/regulablevaleria-puntilla.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/regulablevaleria-puntilla.jpg"
-              alt="Regulable Valeria Puntilla"
-            >
+          <div class="thumbnails">
+            <img src="RECURSOS/regulablevaleria-puntilla.jpg"
+                 class="active"
+                 data-full="RECURSOS/regulablevaleria-puntilla.jpg"
+                 alt="">
           </div>
           <div class="card-body">
             <h5 class="product-title">Regulable Valeria Puntilla</h5>
             <p><strong>Precio:</strong> $10.500</p>
             <p><strong>Color:</strong> Blanco, Beige, Negro, Verde agua, Bordeaux</p>
-            <p><strong>Talles:</strong> 1 (85-90), 2 (95-100)</p>
+            <p><strong>Talles:</strong> 1 (85–90), 2 (95–100)</p>
             <p><strong>Características:</strong> Bombacha regulable de puntilla, microtool en espalda, tiras regulables con reguladores metálicos, refuerzo de algodón.</p>
           </div>
         </div>
       </div>
-
-      <!-- Producto 4 -->
+      <!-- 4 -->
       <div class="col" data-category="Blanco">
         <div class="card h-100 card-pack">
           <div class="card-img-top">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-print.jpg"
-              class="main-image w-100"
-              alt="Colaless Vedetina Print"
-              data-bs-toggle="modal"
-              data-bs-target="#packsImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-print.jpg"
-            >
+            <img src="RECURSOS/colalesvedetina-print.jpg"
+                 class="main-image"
+                 alt="Colaless Vedetina Print"
+                 data-bs-toggle="modal"
+                 data-bs-target="#packsImageModal"
+                 data-bs-src="RECURSOS/colalesvedetina-print.jpg">
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-print.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/colalesvedetina-print.jpg"
-              alt="Colaless Vedetina Print"
-            >
+          <div class="thumbnails">
+            <img src="RECURSOS/colalesvedetina-print.jpg"
+                 class="active"
+                 data-full="RECURSOS/colalesvedetina-print.jpg"
+                 alt="">
           </div>
           <div class="card-body">
             <h5 class="product-title">Colaless/Vedetina Print</h5>
@@ -182,27 +262,22 @@
           </div>
         </div>
       </div>
-
-      <!-- Producto 5 -->
+      <!-- 5 -->
       <div class="col" data-category="Blanco">
         <div class="card h-100 card-pack">
           <div class="card-img-top">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/colales-blancoynegro.jpeg"
-              class="main-image w-100"
-              alt="Colaless Blanco y Negro"
-              data-bs-toggle="modal"
-              data-bs-target="#packsImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/colales-blancoynegro.jpeg"
-            >
+            <img src="RECURSOS/colales-blancoynegro.jpeg"
+                 class="main-image"
+                 alt="Colaless Blanco y Negro"
+                 data-bs-toggle="modal"
+                 data-bs-target="#packsImageModal"
+                 data-bs-src="RECURSOS/colales-blancoynegro.jpeg">
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/colales-blancoynegro.jpeg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/colales-blancoynegro.jpeg"
-              alt="Colaless Blanco y Negro"
-            >
+          <div class="thumbnails">
+            <img src="RECURSOS/colales-blancoynegro.jpeg"
+                 class="active"
+                 data-full="RECURSOS/colales-blancoynegro.jpeg"
+                 alt="">
           </div>
           <div class="card-body">
             <h5 class="product-title">Colaless Blanco y Negro</h5>
@@ -213,40 +288,31 @@
           </div>
         </div>
       </div>
-
-      <!-- Producto 6 -->
+      <!-- 6 -->
       <div class="col" data-category="Blanco">
         <div class="card h-100 card-pack">
           <div class="card-img-top">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/regulable-algodon.jpg"
-              class="main-image w-100"
-              alt="Regulable Algodón"
-              data-bs-toggle="modal"
-              data-bs-target="#packsImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/regulable-algodon.jpg"
-            >
+            <img src="RECURSOS/regulable-algodon.jpg"
+                 class="main-image"
+                 alt="Regulable Algodón"
+                 data-bs-toggle="modal"
+                 data-bs-target="#packsImageModal"
+                 data-bs-src="RECURSOS/regulable-algodon.jpg">
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/regulable-algodon.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/regulable-algodon.jpg"
-              alt="Regulable Algodón"
-              
-            >
-             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/tangas-regulable-algondon-estampadas.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/tangas-regulable-algondon-estampadas.jpg"
-              alt="Pack X2 Regulable Algodón"
-            >
+          <div class="thumbnails">
+            <img src="RECURSOS/regulable-algodon.jpg"
+                 class="active"
+                 data-full="RECURSOS/regulable-algodon.jpg"
+                 alt="">
+            <img src="RECURSOS/tangas-regulable-algondon-estampadas.jpg"
+                 data-full="RECURSOS/tangas-regulable-algondon-estampadas.jpg"
+                 alt="">
           </div>
           <div class="card-body">
             <h5 class="product-title">Regulable Algodón</h5>
             <p><strong>Precio:</strong> $10.300</p>
             <p><strong>Color:</strong> Blanco, Beige, Negro, Gris melange</p>
-            <p><strong>Talles:</strong> 1 (85-90), 2 (95-100)</p>
+            <p><strong>Talles:</strong> 1 (85–90), 2 (95–100)</p>
             <p><strong>Características:</strong> Lycra de algodón, tiras regulables, refuerzo de algodón.</p>
           </div>
         </div>
@@ -254,15 +320,15 @@
     </div>
   </div>
 
-  <!-- Modal Bootstrap para Bombachas Pack -->
+  <!-- Modal -->
   <div class="modal fade" id="packsImageModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
         <div class="modal-header border-0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body p-0">
-          <img id="packs-modal-img" src="" class="img-fluid w-100" alt="Ampliación">
+          <img id="packs-modal-img" class="img-fluid w-100" alt="Ampliación">
         </div>
       </div>
     </div>
@@ -276,34 +342,28 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Filtrar productos
-      document.getElementById('filter').addEventListener('change', function() {
-        const cat = this.value;
-        document.querySelectorAll('#product-container .col').forEach(col => {
-          col.style.display = (cat === 'all' || col.dataset.category === cat) ? 'block' : 'none';
+    // Filter
+    document.getElementById('filter').addEventListener('change', function() {
+      const cat = this.value;
+      document.querySelectorAll('#product-container .col').forEach(col => {
+        col.style.display = (cat==='all' || col.dataset.category===cat) ? 'block' : 'none';
+      });
+    });
+    // Thumbnails
+    document.querySelectorAll('.card-pack').forEach(card => {
+      const main = card.querySelector('.main-image');
+      card.querySelectorAll('.thumbnails img').forEach(t => {
+        t.addEventListener('click', () => {
+          card.querySelectorAll('.thumbnails img').forEach(x => x.classList.remove('active'));
+          t.classList.add('active');
+          main.src = t.dataset.full;
+          main.setAttribute('data-bs-src', t.dataset.full);
         });
       });
-
-      // Miniaturas → actualizar principal y data-bs-src
-      document.querySelectorAll('.card-pack').forEach(card => {
-        const mainImg = card.querySelector('.main-image');
-        card.querySelectorAll('.thumb').forEach(thumb => {
-          thumb.addEventListener('click', () => {
-            card.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-            thumb.classList.add('active');
-            mainImg.src = thumb.dataset.full;
-            mainImg.setAttribute('data-bs-src', thumb.dataset.full);
-          });
-        });
-      });
-
-      // Al abrir el modal, carga la imagen desde data-bs-src
-      const modalEl = document.getElementById('packsImageModal');
-      modalEl.addEventListener('show.bs.modal', event => {
-        const src = event.relatedTarget.getAttribute('data-bs-src');
-        document.getElementById('packs-modal-img').src = src;
-      });
+    });
+    // Modal image
+    document.getElementById('packsImageModal').addEventListener('show.bs.modal', e => {
+      document.getElementById('packs-modal-img').src = e.relatedTarget.getAttribute('data-bs-src');
     });
   </script>
 </body>

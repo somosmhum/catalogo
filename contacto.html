@@ -2,89 +2,208 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de tener este archivo con los estilos personalizados -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto – Catálogo Somos.mhum</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos personalizados embebidos -->
+  <style>
+    /* RESET + TIPOGRAFÍA */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Roboto', sans-serif !important;
+    }
+    body {
+      display: flex; flex-direction: column; min-height: 100vh;
+    }
+    .content { flex: 1; }
+
+    /* NAVBAR */
+    .custom-bg { background-color: #343a40 !important; }
+    .navbar { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    .navbar-logo { width: 120px; height: 60px; }
+    .nav-link {
+      font-size: 1.1rem; font-weight: 500;
+      color: #ffffff !important; transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #d5786a !important; font-weight: bold;
+    }
+    .custom-toggler .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      background-color: #f8f9fa; border-radius: 5px;
+      padding: 0.5rem 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .breadcrumb-item + .breadcrumb-item::before {
+      content: '>'; color: #6c757d; margin: 0 0.5rem;
+    }
+    .breadcrumb-item a {
+      color: #343a40; text-decoration: none; font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .breadcrumb-item a:hover { color: #d5786a; }
+    .breadcrumb-item.active {
+      color: #6c757d; font-weight: bold;
+    }
+
+    /* CONTACTO */
+    .contacto {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; flex: 1;
+    }
+    .mapa-argentina {
+      width: 100%; max-height: 500px; object-fit: contain;
+      margin-bottom: 1.5rem;
+    }
+    .contacto h3 {
+      margin-bottom: 1rem; color: #343a40;
+    }
+    .contacto ul li {
+      margin-bottom: 0.75rem; font-size: 1.1rem;
+      color: #343a40;
+    }
+    .contacto a {
+      color: #343a40; text-decoration: none;
+      transition: color 0.3s;
+    }
+    .contacto a:hover { color: #d5786a; }
+
+    /* BOTÓN FLOTA WHATSAPP */
+    .whatsapp-container {
+      position: fixed; bottom: 20px; right: 20px; z-index: 1000;
+    }
+    .whatsapp-float {
+      background-color: #25D366; border: none; border-radius: 50%;
+      padding: 12px; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    .whatsapp-menu {
+      display: none; position: absolute; bottom: 60px; right: 0;
+      background-color: white; border: 1px solid #ccc; border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 10px;
+    }
+    .whatsapp-menu a {
+      display: block; padding: 8px; color: #333; text-decoration: none;
+      transition: background 0.3s;
+    }
+    .whatsapp-menu a:hover { background-color: #d5786a; color: #fff; }
+
+    /* FOOTER */
+    footer {
+      background-color: #343a40; color: white;
+      padding: 20px 0; text-align: center; margin-top: auto;
+    }
+  </style>
 </head>
 
 <body>
-   <!-- Navbar -->
-   <nav class="navbar navbar-expand-lg navbar-light custom-bg">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light custom-bg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="https://somosmhum.github.io/catalogo/index.html">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
-        </a>
-        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="https://somosmhum.github.io/catalogo/quienes-somos.html">Quiénes
-                        Somos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://somosmhum.github.io/catalogo/como-comprar.html">Como comprar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://somosmhum.github.io/catalogo/tabladetalles.html">Tabla de
-                        Talles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://somosmhum.github.io/catalogo/contacto.html">Contacto</a>
-                </li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="index.html">
+        <img src="RECURSOS/logo.png" alt="Logo" class="navbar-logo">
+      </a>
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="como-comprar.html">Cómo comprar</a></li>
+          <li class="nav-item"><a class="nav-link" href="tabladetalles.html">Tabla de Talles</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
 
-    <!-- Breadcrumb -->
-    <nav aria-label="breadcrumb" class="bg-light py-2">
-        <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://somosmhum.github.io/catalogo/index.html">Inicio</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Contacto</li>
-            </ol>
-        </div>
-    </nav>
-
-    <!-- Sección de Contacto -->
-    <div class="contacto container mt-4">
-        <div class="row">
-            <!-- Mapa de Argentina -->
-            <div class="col-md-6">
-                <img src="https://somosmhum.github.io/catalogo/RECURSOS/mapa.png" alt="Mapa de Argentina" class="img-fluid mapa-argentina">
-            </div>
-            <!-- Información de los representantes comerciales -->
-            <div class="col-md-6">
-                <h3>Representantes comerciales</h3>
-                <ul class="list-unstyled">
-                    <li>📍 Emilia - Orán, Salta - <a href="https://wa.me/5493878559490"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
-                        style="width: 25px;"></i> +54 9 3878 55-9490</a>
-                    <li>📍 Macarena - Córdoba - <a href="https://wa.me/5493878436438"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
-                        style="width: 25px;"></i> +54 9 3878 43-6438</a>
-                    <li>📍 Agustina - Salta Capital - <a href="https://wa.me/5493878610710"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
-                        style="width: 25px;"></i> +54 9 3878 61-0710</a>
-                </ul>
-                <p><strong>Hacemos envíos a todo Argentina, consultanos para más información.</strong></p>
-            </div>
-        </div>
+  <!-- Breadcrumb -->
+  <nav aria-label="breadcrumb" class="bg-light py-2">
+    <div class="container">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+      </ol>
     </div>
+  </nav>
 
-    <!-- Footer (con el mismo estilo que las demás secciones) -->
-    <footer>
-        <p>&copy; 2025 Somos.mhum / Catálogo . Todos los derechos reservados.</p>
-    </footer>
+  <!-- Sección de Contacto -->
+  <div class="contacto container mt-4">
+    <div class="row align-items-center">
+      <!-- Mapa de Argentina -->
+      <div class="col-md-6">
+        <img src="RECURSOS/mapa.png" alt="Mapa de Argentina" class="mapa-argentina">
+      </div>
+      <!-- Información de representantes -->
+      <div class="col-md-6 text-start">
+        <h3>Representantes comerciales</h3>
+        <ul class="list-unstyled">
+          <li>
+            📍 Emilia - Orán, Salta &nbsp;
+            <a href="https://wa.me/5493878559490">
+              <i class="fab fa-whatsapp"></i> +54 9 3878 55-9490
+            </a>
+          </li>
+          <li>
+            📍 Macarena - Córdoba &nbsp;
+            <a href="https://wa.me/5493878436438">
+              <i class="fab fa-whatsapp"></i> +54 9 3878 43-6438
+            </a>
+          </li>
+          <li>
+            📍 Agustina - Salta Capital &nbsp;
+            <a href="https://wa.me/5493878610710">
+              <i class="fab fa-whatsapp"></i> +54 9 3878 61-0710
+            </a>
+          </li>
+        </ul>
+        <p><strong>Hacemos envíos a todo Argentina, consultanos para más información.</strong></p>
+      </div>
+    </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Botón flotante de WhatsApp -->
+  <div class="whatsapp-container">
+    <button id="whatsappBtn" class="whatsapp-float">
+      <i class="fab fa-whatsapp" style="color:#fff; font-size:1.5rem;"></i>
+    </button>
+    <div id="whatsappMenu" class="whatsapp-menu">
+      <a href="https://wa.me/5493878436438" target="_blank">Córdoba</a>
+      <a href="https://wa.me/5493878610710" target="_blank">Salta Capital</a>
+      <a href="https://wa.me/5493878559490" target="_blank">Orán</a>
+    </div>
+  </div>
 
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Somos.mhum / Catálogo. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Toggle menú WhatsApp
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('whatsappBtn');
+      const menu = document.getElementById('whatsappMenu');
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      });
+      document.addEventListener('click', e => {
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
 </html>

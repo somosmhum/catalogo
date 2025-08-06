@@ -6,15 +6,65 @@
   <title>Toalla de Microfibra – Catálogo Somos.mhum</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Tus estilos personalizados -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- ESTILOS INTEGRADOS -->
+  <style>
+    /* RESET + TIPOGRAFÍA */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto',sans-serif!important; }
+    body { display:flex; flex-direction:column; min-height:100vh; }
+
+    /* NAVBAR */
+    .custom-bg { background-color:#343a40!important; }
+    .navbar { box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+    .navbar-logo { width:120px; height:60px; }
+    .nav-link { font-size:1.1rem; font-weight:500; color:#fff!important; transition:color .3s; }
+    .nav-link:hover { color:#d5786a!important; font-weight:bold; }
+    .custom-toggler .navbar-toggler-icon {
+      background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb { background-color:#f8f9fa; border-radius:5px; padding:.5rem 1rem; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    .breadcrumb-item+ .breadcrumb-item::before { content:'>'; color:#6c757d; margin:0 .5rem; }
+    .breadcrumb-item a { color:#343a40; text-decoration:none; font-weight:500; transition:color .3s; }
+    .breadcrumb-item a:hover { color:#d5786a; }
+    .breadcrumb-item.active { color:#6c757d; font-weight:bold; }
+
+    /* CARD & MINIATURAS */
+    .card { height:100%; display:flex; flex-direction:column; justify-content:space-between; transition:transform .2s; cursor:pointer; }
+    .card:hover { transform:scale(1.05); }
+    .card-img-top img,
+    .main-image { width:100%; height:400px; object-fit:cover; transition:transform .3s ease; }
+    .card-img-top img:hover { transform:scale(1.05); }
+    .thumb { width:60px; height:60px; object-fit:cover; cursor:pointer; border:2px solid transparent; border-radius:4px; transition:border-color .2s; }
+    .thumb.active, .thumb:hover { border-color:#0d6efd; }
+
+    /* BOTONES */
+    .btn-outline-dark { background-color:#343a40; color:#fff; border:none; transition:background-color .3s ease; }
+    .btn-outline-dark:hover { background-color:#d5786a; color:#fff; }
+
+    /* FOOTER */
+    footer { background-color:#343a40; color:#fff; padding:20px 0; text-align:center; margin-top:auto; }
+
+    /* RESPONSIVE */
+    @media (max-width:768px) {
+      .row { display:flex; flex-direction:column; }
+      .col-md-4, .col-md-6 { width:100%; margin-bottom:20px; }
+      .card-img-top img, .main-image { height:300px!important; }
+    }
+
+    /* ESPECÍFICOS TOALLA */
+    .card-toalla { max-width:600px; margin:auto; }
+    .card-toalla .product-title { background-color:#343a40; color:#d5786a; padding:10px; text-align:center; margin:-16px -16px 16px -16px; border-radius:5px 5px 0 0; }
+    /* MODAL */
+    .modal-content img { max-height:90vh; object-fit:contain; }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light custom-bg">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
+        <img src="RECURSOS/logo.png" alt="Logo" class="navbar-logo">
       </a>
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -45,45 +95,24 @@
   <!-- Contenido Principal -->
   <div class="container my-5">
     <h1 class="text-center mb-4">Toalla de Microfibra</h1>
-
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card h-100 card-toalla">
           <div class="card-img-top position-relative">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/toalla1.jpg"
+              src="RECURSOS/toalla1.jpg"
               class="main-image img-fluid w-100 rounded"
               alt="Toalla vista frontal"
               data-bs-toggle="modal"
               data-bs-target="#toallaImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/toalla1.jpg"
+              data-bs-src="RECURSOS/toalla1.jpg"
             >
           </div>
           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/toalla1.jpg"
-              class="thumb active rounded"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/toalla1.jpg"
-              alt="Frontal"
-            >
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/toalla2.jpg"
-              class="thumb rounded"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/toalla2.jpg"
-              alt="Detalle 1"
-            >
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/toalla3.jpg"
-              class="thumb rounded"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/toalla3.jpg"
-              alt="Detalle 2"
-            >
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/toalla4.jpg"
-              class="thumb rounded"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/toalla4.jpg"
-              alt="Detalle 3"
-            >
+            <img src="RECURSOS/toalla1.jpg" class="thumb active rounded" data-full="RECURSOS/toalla1.jpg" alt="Frontal">
+            <img src="RECURSOS/toalla2.jpg" class="thumb rounded"       data-full="RECURSOS/toalla2.jpg" alt="Detalle 1">
+            <img src="RECURSOS/toalla3.jpg" class="thumb rounded"       data-full="RECURSOS/toalla3.jpg" alt="Detalle 2">
+            <img src="RECURSOS/toalla4.jpg" class="thumb rounded"       data-full="RECURSOS/toalla4.jpg" alt="Detalle 3">
           </div>
           <div class="card-body text-center">
             <h5 class="product-title">Toalla de Microfibra</h5>

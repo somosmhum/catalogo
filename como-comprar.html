@@ -1,139 +1,257 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como comprar</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cómo comprar – Catálogo Somos.mhum</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados inline -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif !important;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .content {
+      flex: 1;
+    }
+    .breadcrumb {
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .breadcrumb-item a {
+      color: #343a40;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .breadcrumb-item a:hover {
+      color: #d5786a;
+    }
+    .breadcrumb-item.active {
+      color: #6c757d;
+      font-weight: bold;
+    }
+    .breadcrumb-item + .breadcrumb-item::before {
+      content: '>';
+      color: #6c757d;
+      margin: 0 0.5rem;
+    }
+    .custom-toggler .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    .card img {
+      transition: transform 0.3s ease;
+    }
+    .card img:hover {
+      transform: scale(1.05);
+    }
+    .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card img {
+      height: 400px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .btn-outline-dark {
+      background-color: #343a40;
+      color: #fff;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn-outline-dark:hover {
+      background-color: #d5786a;
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+      .col-md-4 {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .card img {
+        height: 400px !important;
+        object-fit: cover !important;
+      }
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .custom-bg {
+      background-color: #343a40 !important;
+    }
+    .navbar {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .nav-link {
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      color: #ffffff !important;
+    }
+    .nav-link:hover {
+      color: #d5786a;
+      font-weight: bold;
+    }
+    nav .navbar-logo {
+      width: 120px;
+      height: 60px;
+    }
+    b {
+      color: #d5786a;
+    }
+    .text-justify {
+      text-align: justify;
+    }
+    @media (max-width: 768px) {
+      .text-center { text-align: center; }
+      .text-justify { text-align: justify; }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="content">
-        <nav class="navbar navbar-expand-lg navbar-light custom-bg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="https://somosmhum.github.io/catalogo/index.html">
-                    <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
-                </a>
-                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://somosmhum.github.io/catalogo/quienes-somos.html">Quiénes
-                                Somos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://somosmhum.github.io/catalogo/comocomprar.html">Cómo
-                                comprar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://somosmhum.github.io/catalogo/tabladetalles.html">Tabla de
-                                Talles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://somosmhum.github.io/catalogo/contacto.html">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Acordeón -->
-        <div class="container mt-4">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Cómo comprar
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <h2 class="text-center mb-4 fs-4"><b>Cómo comprar</b></h2>
-            <p class="text-justify fs-6">
-                Una vez que se selecciona la prenda nos escribís a los números de teléfono que figuran en la página o a nuestro Instagram. Si no sos de Salta o de Orán, te comunicás directamente al número principal que es el de Córdoba, donde te atiende Maqui desde el taller de confección. 
-            </p>
-            <p class="text-justify fs-6">
-                En nuestro catálogo te mostramos todos los productos y sus talles. Contamos con stock limitado en Salta y Orán. <strong>Las prendas sin stock tienen una demora de confección de 5 a 10 días hábiles</strong>.
-            </p>
-            <p class="text-justify fs-6">
-                Las prendas pueden personalizarse en medidas y materiales dentro de la tabla de talles. Luego de definir el pedido, el pago puede realizarse en <strong>efectivo, transferencia o tarjeta de crédito/débito</strong>.
-            </p>
-            <p class="text-justify fs-6">
-                Una vez confirmado el pago, comenzamos la confección con una demora de 5 a 10 días hábiles. Te avisaremos cuando esté listo para envío o retiro.
-            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Medios de pago
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <h2 class="text-center mb-4 fs-4"><b>Medios de Pagos</b></h2>
-                            <p class="text-justify fs-6">
-                                Contado/efectivo
-                            </p>
-                            <p class="text-justify fs-6">
-                                Transferencia: ALIAS- somos.mhum / Nombre: Maria Agustina Hum, CUIT/CUIL: 27-37721799-9, NX.
-                            </p>
-                            <p class="text-justify fs-6">
-                                Tarjeta de crédito y débito: 3 y 6 sin interés con Visa Macro exclusivamente. Con otras tarjetas  te compartimos un link donde podrás ver la cantidad de cuotas según tu banco.
-                            </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Política de devoluciones
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <h2 class="text-center mb-4 fs-4"><b>Política de Devolución y Cambios</b></h2>
-                            <h2 class="text-center mb-5 fs-5 fw-bold text-dark">Primero que nada gracias por elegir nuestras prendas 100% artesanales,no te vas a arrepentir!</h2>
-                            <p class="text-justify fs-6">
-                                <strong>FALLAS EN LAS PRENDAS</strong>: En el caso de que la prenda tenga alguna falla, se comunican con su vendedora para realizar el cambio por exactamente la misma prenda ( talle y color)  que se compró. Esto se deberá hacer dentro de los 7 días desde que llegó su paquete. En este caso nos hacemos cargo del envío del mismo. 
-                            </p>
-                            <p class="text-justify fs-6">
-                               <strong> PRENDA DE STOCK</strong>: En caso de que no coincida el talle, se puede realizar el cambio, esto dependerá de lo que haya en stock en el momento. La prenda deberá estar LIMPIA y dentro de su packaging. Esto se podrá hacer hasta dos veces y en el caso de que haya envío se deberá hacer cargo la persona que lo compró.  
-
-                            </p>
-                            <p class="text-justify fs-6">
-                                <strong>PRENDAS CONFECCIONADAS A PEDIDO</strong>: En caso que haya que hacer alguna modificación se envía el producto para hacerle las respectivas modificaciones, el envío corre por parte del cliente. La prenda se deberá entregar LIMPIA y dentro del packaging. Estas modificaciones se pueden realizar una vez, sin excepción.
-                            </p> 
-                            <p class="text-justify fs-6">
-                                <strong>DEVOLUCIONES</strong>: En caso de que el cliente  quiera una devolución de un producto deberá gestionarlo dentro de los 5 días luego de haber realizado la compra o recibido el paquete. La prenda se deberá entregar LIMPIA y dentro del packaging. Se podrá hacer la devolución del dinero o se generará un cupón por el valor abonado para que el cliente utilice cuando quiera para una nueva compra.  Al no tratarse de un error por parte de la empresa el <strong>COSTO DE ENVÍO CORRE A CARGO DEL CLIENTE SIN EXCEPCIÓN</strong>.
-                            </p>
-                            <p class="text-justify fs-6">
-                                <strong>ENVÍOS</strong>:  Los envíos se realizan por correo argentino o BUSPACK. Estos se realizan los jueves de cada mes. Los mismos se coordinarán con el cliente. Los pedidos enviados a Salta y Orán se realizan una vez al mes, para que sea más barato el valor de envío del paquete y su entrega se coordinará con su vendedor.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="content">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light custom-bg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="RECURSOS/logo.png" alt="Logo" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes Somos</a></li>
+            <li class="nav-item"><a class="nav-link" href="como-comprar.html">Cómo comprar</a></li>
+            <li class="nav-item"><a class="nav-link" href="tabladetalles.html">Tabla de Talles</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          </ul>
         </div>
+      </div>
+    </nav>
 
-        <main id="quienes-somos" class="container py-5">
-            
-        </main>
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="bg-light py-2">
+      <div class="container">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Cómo comprar</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Acordeón de compra -->
+    <div class="container mt-4">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Cómo comprar
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show"
+               aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <h2 class="text-center mb-4 fs-4"><b>Cómo comprar</b></h2>
+              <p class="text-justify fs-6">
+                Una vez que se selecciona la prenda nos escribís a los números de teléfono que figuran en la página o a nuestro Instagram. Si no sos de Salta o de Orán, te comunicás directamente al número principal que es el de Córdoba, donde te atiende Maqui desde el taller de confección.
+              </p>
+              <p class="text-justify fs-6">
+                En nuestro catálogo te mostramos todos los productos y sus talles. Contamos con stock limitado en Salta y Orán. <strong>Las prendas sin stock tienen una demora de confección de 5 a 10 días hábiles</strong>.
+              </p>
+              <p class="text-justify fs-6">
+                Las prendas pueden personalizarse en medidas y materiales dentro de la tabla de talles. Luego de definir el pedido, el pago puede realizarse en <strong>efectivo, transferencia o tarjeta de crédito/débito</strong>.
+              </p>
+              <p class="text-justify fs-6">
+                Una vez confirmado el pago, comenzamos la confección con una demora de 5 a 10 días hábiles. Te avisaremos cuando esté listo para envío o retiro.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Medios de pago
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse"
+               aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <h2 class="text-center mb-4 fs-4"><b>Medios de Pagos</b></h2>
+              <p class="text-justify fs-6">Contado/efectivo</p>
+              <p class="text-justify fs-6">
+                Transferencia: ALIAS- somos.mhum / Nombre: Maria Agustina Hum, CUIT/CUIL: 27-37721799-9, NX.
+              </p>
+              <p class="text-justify fs-6">
+                Tarjeta de crédito y débito: 3 y 6 sin interés con Visa Macro exclusivamente. Con otras tarjetas  te compartimos un link donde podrás ver la cantidad de cuotas según tu banco.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Política de devoluciones
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse"
+               aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <h2 class="text-center mb-4 fs-4"><b>Política de Devolución y Cambios</b></h2>
+              <h2 class="text-center mb-5 fs-5 fw-bold text-dark">
+                Primero que nada gracias por elegir nuestras prendas 100% artesanales, no te vas a arrepentir!
+              </h2>
+              <p class="text-justify fs-6"><strong>FALLAS EN LAS PRENDAS</strong>: En el caso de que la prenda tenga alguna falla, se comunican con su vendedora para realizar el cambio por exactamente la misma prenda (talle y color) que se compró. Esto se deberá hacer dentro de los 7 días desde que llegó su paquete. En este caso nos hacemos cargo del envío del mismo.</p>
+              <p class="text-justify fs-6"><strong>PRENDA DE STOCK</strong>: En caso de que no coincida el talle, se puede realizar el cambio, esto dependerá de lo que haya en stock en el momento. La prenda deberá estar LIMPIA y dentro de su packaging. Esto se podrá hacer hasta dos veces y en el caso de que haya envío se deberá hacer cargo la persona que lo compró.</p>
+              <p class="text-justify fs-6"><strong>PRENDAS CONFECCIONADAS A PEDIDO</strong>: En caso que haya que hacer alguna modificación se envía el producto para hacerle las respectivas modificaciones, el envío corre por parte del cliente. La prenda se deberá entregar LIMPIA y dentro del packaging. Estas modificaciones se pueden realizar una vez, sin excepción.</p>
+              <p class="text-justify fs-6"><strong>DEVOLUCIONES</strong>: En caso de que el cliente quiera una devolución de un producto deberá gestionarlo dentro de los 5 días luego de haber realizado la compra o recibido el paquete. La prenda se deberá entregar LIMPIA y dentro del packaging. Se podrá hacer la devolución del dinero o se generará un cupón por el valor abonado para que el cliente utilice cuando quiera para una nueva compra. Al no tratarse de un error por parte de la empresa el <strong>COSTO DE ENVÍO CORRE A CARGO DEL CLIENTE SIN EXCEPCIÓN</strong>.</p>
+              <p class="text-justify fs-6"><strong>ENVÍOS</strong>: Los envíos se realizan por correo argentino o BUSPACK. Estos se realizan los jueves de cada mes. Los mismos se coordinarán con el cliente. Los pedidos enviados a Salta y Orán se realizan una vez al mes, para que sea más barato el valor de envío del paquete y su entrega se coordinará con su vendedor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Somos.mhum / Catálogo. Todos los derechos reservados.</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Somos.mhum / Catálogo. Todos los derechos reservados.</p>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

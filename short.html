@@ -6,15 +6,86 @@
   <title>Short de Pijamas – Catálogo Somos.mhum</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Tus estilos personalizados -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Estilos integrados -->
+  <style>
+    /* RESET + TIPOGRAFÍA */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto',sans-serif!important; }
+    body { display:flex; flex-direction:column; min-height:100vh; }
+
+    /* NAVBAR */
+    .custom-bg { background-color:#343a40!important; }
+    .navbar { box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+    .navbar-logo { width:120px; height:60px; }
+    .nav-link { font-size:1.1rem; font-weight:500; color:#fff!important; transition:color .3s; }
+    .nav-link:hover { color:#d5786a!important; font-weight:bold; }
+    .custom-toggler .navbar-toggler-icon {
+      background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb { background-color:#f8f9fa; border-radius:5px; padding:.5rem 1rem; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    .breadcrumb-item+ .breadcrumb-item::before { content:'>'; color:#6c757d; margin:0 .5rem; }
+    .breadcrumb-item a { color:#343a40; text-decoration:none; font-weight:500; transition:color .3s; }
+    .breadcrumb-item a:hover { color:#d5786a; }
+    .breadcrumb-item.active { color:#6c757d; font-weight:bold; }
+
+    /* CARDS & MINIATURAS */
+    .card img { transition:transform .3s ease; }
+    .card img:hover { transform:scale(1.05); }
+    .card { height:100%; display:flex; flex-direction:column; justify-content:space-between; }
+    .card img { height:400px; object-fit:cover; width:100%; }
+    .card-body { flex-grow:1; display:flex; flex-direction:column; justify-content:space-between; }
+    .thumbnails img { width:60px; height:60px; object-fit:cover; cursor:pointer; border:2px solid transparent; border-radius:4px; transition:border-color .2s; }
+    .thumbnails img.active { border-color:#0d6efd; }
+
+    /* PRODUCT TITLE */
+    .product-title { background-color:#343a40; color:#d5786a; padding:10px; text-align:center; margin:-16px -16px 16px -16px; border-radius:5px 5px 0 0; }
+
+    /* FOOTER */
+    footer { background-color:#343a40; color:#fff; padding:20px 0; text-align:center; margin-top:auto; }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .card img { height:300px; }
+    }
+    @media (max-width: 768px) {
+  /* reduce altura de la imagen principal */
+  .card img {
+    height: 300px;
+  }
+
+  /* miniaturas en fila scrollable */
+  .thumbnails {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    margin: 0 -1rem;        /* compensar el padding del contenedor */
+    gap: 0.5rem;
+  }
+  .thumbnails::-webkit-scrollbar {
+    height: 6px;
+  }
+  .thumbnails::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 3px;
+  }
+
+  /* miniaturas ligeramente más pequeñas */
+  .thumbnails img {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+  </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light custom-bg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="https://somosmhum.github.io/catalogo/index.html">
-        <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
+      <a class="navbar-brand" href="index.html">
+        <img src="RECURSOS/logo.png" alt="Logo" class="navbar-logo">
       </a>
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -59,24 +130,24 @@
 
     <!-- Productos -->
     <div id="product-container" class="row row-cols-1 row-cols-md-3 g-4">
-      <!-- Producto 1: Short Liso -->
+      <!-- Short Liso -->
       <div class="col" data-category="liso">
         <div class="card h-100 card-short">
           <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/shortlisonegro.jpg"
+              src="RECURSOS/shortlisonegro.jpg"
               class="main-image w-100"
               alt="Short Liso"
               data-bs-toggle="modal"
               data-bs-target="#shortsImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/shortlisonegro.jpg"
+              data-bs-src="RECURSOS/shortlisonegro.jpg"
             >
           </div>
           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/shortlisonegro.jpg"
+              src="RECURSOS/shortlisonegro.jpg"
               class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/shortlisonegro.jpg"
+              data-full="RECURSOS/shortlisonegro.jpg"
               alt="Short Liso"
             >
           </div>
@@ -90,24 +161,24 @@
         </div>
       </div>
 
-      <!-- Producto 2: Short Print -->
+      <!-- Short Print -->
       <div class="col" data-category="estampado">
         <div class="card h-100 card-short">
           <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/shortprint.jpg"
+              src="RECURSOS/shortprint.jpg"
               class="main-image w-100"
               alt="Short Print"
               data-bs-toggle="modal"
               data-bs-target="#shortsImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/shortprint.jpg"
+              data-bs-src="RECURSOS/shortprint.jpg"
             >
           </div>
           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/shortprint.jpg"
+              src="RECURSOS/shortprint.jpg"
               class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/shortprint.jpg"
+              data-full="RECURSOS/shortprint.jpg"
               alt="Short Print"
             >
           </div>
@@ -121,24 +192,24 @@
         </div>
       </div>
 
-      <!-- Producto 3: Short Print Sebra -->
+      <!-- Short Print Sebra -->
       <div class="col" data-category="estampado">
         <div class="card h-100 card-short">
           <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/shortsebra.jpg"
+              src="RECURSOS/shortsebra.jpg"
               class="main-image w-100"
               alt="Short Print Sebra"
               data-bs-toggle="modal"
               data-bs-target="#shortsImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/shortsebra.jpg"
+              data-bs-src="RECURSOS/shortsebra.jpg"
             >
           </div>
           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/shortsebra.jpg"
+              src="RECURSOS/shortsebra.jpg"
               class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/shortsebra.jpg"
+              data-full="RECURSOS/shortsebra.jpg"
               alt="Short Print Sebra"
             >
           </div>
@@ -154,7 +225,7 @@
     </div>
   </div>
 
-  <!-- Bootstrap Modal para Shorts -->
+  <!-- Modal -->
   <div class="modal fade" id="shortsImageModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
@@ -185,7 +256,7 @@
         });
       });
 
-      // Miniaturas → actualizar principal y data-bs-src
+      // Miniaturas
       document.querySelectorAll('.card-short').forEach(card => {
         const mainImg = card.querySelector('.main-image');
         card.querySelectorAll('.thumb').forEach(thumb => {
@@ -198,7 +269,7 @@
         });
       });
 
-      // Al abrir el modal, carga la imagen desde data-bs-src
+      // Modal
       const modalEl = document.getElementById('shortsImageModal');
       modalEl.addEventListener('show.bs.modal', event => {
         const src = event.relatedTarget.getAttribute('data-bs-src');

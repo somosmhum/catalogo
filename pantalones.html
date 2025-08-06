@@ -6,15 +6,94 @@
   <title>Pantalones de Pijama – Catálogo Somos.mhum</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Tus estilos personalizados -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Estilos embebidos -->
+  <style>
+    /* RESET + TIPOGRAFÍA */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto',sans-serif!important; }
+    body { display:flex; flex-direction:column; min-height:100vh; }
+
+    /* NAVBAR */
+    .custom-bg { background-color:#343a40!important; }
+    .navbar { box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+    .navbar-logo { width:120px; height:60px; }
+    .nav-link { font-size:1.1rem; font-weight:500; color:#fff!important; transition:color .3s; }
+    .nav-link:hover { color:#d5786a!important; font-weight:bold; }
+    .custom-toggler .navbar-toggler-icon {
+      background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb { background-color:#f8f9fa; border-radius:5px; padding:.5rem 1rem; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    .breadcrumb-item+ .breadcrumb-item::before { content:'>'; color:#6c757d; margin:0 .5rem; }
+    .breadcrumb-item a { color:#343a40; text-decoration:none; font-weight:500; transition:color .3s; }
+    .breadcrumb-item a:hover { color:#d5786a; }
+    .breadcrumb-item.active { color:#6c757d; font-weight:bold; }
+
+    /* TARJETAS FLEX */
+    #product-container .card.h-100 {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    #product-container .card-img-top .main-image {
+      width: 100%; height: 400px; object-fit: cover;
+      cursor: pointer; transition: transform .3s ease;
+      flex-shrink: 0;
+    }
+    #product-container .card-img-top .main-image:hover {
+      transform: scale(1.05);
+    }
+
+    /* MINIATURAS (ahora 3 por tarjeta) */
+    #product-container .thumbnails {
+      display: flex; justify-content: center; gap: .5rem;
+      margin: .5rem 0; flex-shrink: 0;
+    }
+    #product-container .thumbnails img {
+      width: 60px; height: 60px; object-fit: cover;
+      cursor: pointer; border:2px solid transparent;
+      border-radius:4px; transition: border-color .2s;
+    }
+    #product-container .thumbnails img.active {
+      border-color: #d5786a;
+    }
+
+    /* ENCABEZADO */
+    #product-container .product-title {
+      display: block; background-color: #343a40;
+      color: #d5786a; margin: 0 -1px 1rem;
+      padding: .75rem 1rem; font-size:1.25rem;
+      text-align:center;
+      border-top-left-radius:.25rem; border-top-right-radius:.25rem;
+    }
+
+    /* CUERPO FLEX */
+    #product-container .card-body {
+      flex:1 1 auto; display:flex;
+      flex-direction:column; padding-top:.5rem;
+    }
+    #product-container .card-body > *:last-child {
+      margin-top: auto;
+    }
+
+    /* IGUALA ALTURA DE COLUMNAS */
+    #product-container .col {
+      display:flex;
+    }
+
+    /* FOOTER */
+    footer { background-color:#343a40; color:#fff; padding:20px 0; text-align:center; margin-top:auto; }
+    @media(max-width:768px){
+      .main-image { height:300px!important; }
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light custom-bg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="https://somosmhum.github.io/catalogo/index.html">
-        <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
+      <a class="navbar-brand" href="index.html">
+        <img src="RECURSOS/logo.png" alt="Logo" class="navbar-logo">
       </a>
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -59,26 +138,21 @@
 
     <!-- Productos -->
     <div id="product-container" class="row row-cols-1 row-cols-md-3 g-4">
-      <!-- Producto 1: Pantalón a rayas -->
+      <!-- Producto 1 -->
       <div class="col" data-category="liso">
         <div class="card h-100">
           <div class="card-img-top">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-rayas.jpg"
-              class="main-image w-100"
-              alt="Pantalón a rayas"
-              data-bs-toggle="modal"
-              data-bs-target="#pantalonesImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-rayas.jpg"
-            >
+            <img src="RECURSOS/pantalon-rayas.jpg"
+                 class="main-image"
+                 alt="Pantalón a rayas"
+                 data-bs-toggle="modal"
+                 data-bs-target="#pantalonesImageModal"
+                 data-bs-src="RECURSOS/pantalon-rayas.jpg">
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-rayas.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-rayas.jpg"
-              alt="Pantalón a rayas"
-            >
+          <div class="thumbnails">
+            <img src="RECURSOS/pantalon-rayas.jpg"      class="active" data-full="RECURSOS/pantalon-rayas.jpg"      alt="">
+            
+            
           </div>
           <div class="card-body">
             <h5 class="product-title">Pantalón a rayas</h5>
@@ -90,26 +164,21 @@
         </div>
       </div>
 
-      <!-- Producto 2: Pantalón Negro -->
+      <!-- Producto 2 -->
       <div class="col" data-category="liso">
         <div class="card h-100">
           <div class="card-img-top">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-negro.jpg"
-              class="main-image w-100"
-              alt="Pantalón Negro"
-              data-bs-toggle="modal"
-              data-bs-target="#pantalonesImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-negro.jpg"
-            >
+            <img src="RECURSOS/pantalon-negro.jpg"
+                 class="main-image"
+                 alt="Pantalón Negro"
+                 data-bs-toggle="modal"
+                 data-bs-target="#pantalonesImageModal"
+                 data-bs-src="RECURSOS/pantalon-negro.jpg">
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/negro.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/negro.jpg"
-              alt="Pantalón Negro"
-            >
+          <div class="thumbnails">
+            <img src="RECURSOS/pantalon-negro.jpg"     class="active" data-full="RECURSOS/pantalon-negro.jpg"     alt="">
+            <img src="RECURSOS/negro.jpg"    class=""       data-full="RECURSOS/negro.jpg"    alt="">
+            
           </div>
           <div class="card-body">
             <h5 class="product-title">Pantalón Negro</h5>
@@ -121,39 +190,22 @@
         </div>
       </div>
 
-      <!-- Producto 3: Pantalón con bolsillos -->
+      <!-- Producto 3 -->
       <div class="col" data-category="bolsillos">
         <div class="card h-100">
           <div class="card-img-top">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-bolsillos.jpg"
-              class="main-image w-100"
-              alt="Pantalón con bolsillos"
-              data-bs-toggle="modal"
-              data-bs-target="#pantalonesImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-bolsillos.jpg"
-            >
+            <img src="RECURSOS/pantalon-bolsillos.jpg"
+                 class="main-image"
+                 alt="Pantalón con bolsillos"
+                 data-bs-toggle="modal"
+                 data-bs-target="#pantalonesImageModal"
+                 data-bs-src="RECURSOS/pantalon-bolsillos.jpg">
           </div>
-          <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-bolsillo1.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-bolsillo1.jpg"
-              alt="Pantalón con bolsillos"
-            >
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-bolsillo2.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-bolsillo2.jpg"
-              alt="Pantalón con bolsillos"
-            >
-              <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-bolsillo.jpg"
-              class="thumb active"
-              data-full="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-bolsillo.jpg"
-              alt="Pantalón con bolsillos"
-            >
-           
+          <div class="thumbnails">
+            <img src="RECURSOS/pantalon-bolsillos.jpg" class="active" data-full="RECURSOS/pantalon-bolsillos.jpg" alt="">
+            <img src="RECURSOS/pantalon-bolsillo.jpg" class=""       data-full="RECURSOS/pantalon-bolsillo.jpg" alt="">
+            <img src="RECURSOS/pantalon-bolsillo1.jpg" class=""       data-full="RECURSOS/pantalon-bolsillo1.jpg" alt="">
+            <img src="RECURSOS/pantalon-bolsillo2.jpg" class=""       data-full="RECURSOS/pantalon-bolsillo2.jpg" alt="">
           </div>
           <div class="card-body">
             <h5 class="product-title">Pantalón con bolsillos</h5>
@@ -182,39 +234,38 @@
   </div>
 
   <!-- Footer -->
-  <footer class="text-center py-4">
+  <footer>
     <p>&copy; 2025 Somos.mhum / Catálogo. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Bootstrap JS + comportamiento dinámico -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Filtrar productos
-      document.getElementById('filter').addEventListener('change', function() {
-        const cat = this.value;
-        document.querySelectorAll('#product-container .col').forEach(col => {
-          col.style.display = (cat === 'all' || col.dataset.category === cat) ? 'block' : 'none';
-        });
+      // Filtrado de categorías
+      document.getElementById('filter').addEventListener('change', e => {
+        const cat = e.target.value;
+        document.querySelectorAll('#product-container .col')
+          .forEach(col => col.style.display = (cat==='all'||col.dataset.category===cat)?'block':'none');
       });
 
-      // Miniaturas → actualizar imagen principal y data-bs-src
-      document.querySelectorAll('.card.h-100').forEach(card => {
-        const mainImg = card.querySelector('.main-image');
-        card.querySelectorAll('.thumb').forEach(thumb => {
+      // Miniaturas: actualización de imagen principal y data-bs-src
+      document.querySelectorAll('#product-container .card').forEach(card => {
+        const main = card.querySelector('.main-image');
+        card.querySelectorAll('.thumbnails img').forEach(thumb => {
           thumb.addEventListener('click', () => {
-            card.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            card.querySelectorAll('.thumbnails img').forEach(t=>t.classList.remove('active'));
             thumb.classList.add('active');
-            mainImg.src = thumb.dataset.full;
-            mainImg.setAttribute('data-bs-src', thumb.dataset.full);
+            main.src = thumb.dataset.full;
+            main.setAttribute('data-bs-src', thumb.dataset.full);
           });
         });
       });
 
-      // Al abrir el modal, carga la imagen desde data-bs-src
+      // Modal: toma la src desde data-bs-src al abrir
       const modalEl = document.getElementById('pantalonesImageModal');
-      modalEl.addEventListener('show.bs.modal', event => {
-        const src = event.relatedTarget.getAttribute('data-bs-src');
+      modalEl.addEventListener('show.bs.modal', ev => {
+        const src = ev.relatedTarget.getAttribute('data-bs-src');
         document.getElementById('pantalones-modal-img').src = src;
       });
     });

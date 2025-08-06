@@ -6,15 +6,55 @@
   <title>Nuevos lanzamientos – Catálogo Somos.mhum</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Tus estilos personalizados -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Estilos embebidos -->
+  <style>
+    /* RESET + TIPOGRAFÍA */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif!important;}
+    body{display:flex;flex-direction:column;min-height:100vh;}
+
+    /* NAVBAR */
+    .custom-bg{background-color:#343a40!important;}
+    .navbar{box-shadow:0 4px 6px rgba(0,0,0,0.1);}
+    .navbar-logo{width:120px;height:60px;}
+    .nav-link{font-size:1.1rem;font-weight:500;color:#fff!important;transition:color .3s;}
+    .nav-link:hover{color:#d5786a!important;font-weight:bold;}
+    .custom-toggler .navbar-toggler-icon{
+      background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb{background-color:#f8f9fa;border-radius:5px;padding:.5rem 1rem;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+    .breadcrumb-item+ .breadcrumb-item::before{content:'>';color:#6c757d;margin:0 .5rem;}
+    .breadcrumb-item a{color:#343a40;text-decoration:none;font-weight:500;transition:color .3s;}
+    .breadcrumb-item a:hover{color:#d5786a;}
+    .breadcrumb-item.active{color:#6c757d;font-weight:bold;}
+
+    /* TARJETAS */
+    .card{height:100%;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s ease;}
+    .card:hover{transform:scale(1.02);}
+    .card-img-top{position:relative;}
+    .card-img-top img.main-image{width:100%;height:400px;object-fit:cover;cursor:pointer;}
+    .card-body{flex-grow:1;display:flex;flex-direction:column;justify-content:space-between;}
+
+    /* MINIATURAS */
+    .thumbnails img{width:60px;height:60px;object-fit:cover;cursor:pointer;border:2px solid transparent;border-radius:4px;transition:border-color .2s;}
+    .thumbnails img.active{border-color:#0d6efd;}
+
+    /* FOOTER */
+    footer{text-align:center;padding:20px 0;background:#343a40;color:#fff;margin-top:auto;}
+
+    /* MEDIA QUERIES */
+    @media(max-width:768px){
+      .card-img-top img.main-image{height:300px;}
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light custom-bg">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
+        <img src="RECURSOS/logo.png" alt="Logo" class="navbar-logo">
       </a>
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -63,25 +103,19 @@
       <!-- Producto 1 -->
       <div class="col" data-category="liso">
         <div class="card h-100 card-nuevos">
-          <div class="card-img-top position-relative">
+          <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-florcitas.jpg"
-              class="main-image img-fluid w-100"
+              src="RECURSOS/pantalon-florcitas.jpg"
+              class="main-image img-fluid"
               alt="Pantalon largo floreado"
               data-bs-toggle="modal"
               data-bs-target="#nuevosImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-florcitas.jpg"
+              data-bs-src="RECURSOS/pantalon-florcitas.jpg"
             >
           </div>
           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-florcitas.jpg"
-                 class="thumb active rounded"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-florcitas.jpg"
-                 alt="Floreado frontal">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-florcitas1.jpg"
-                 class="thumb rounded"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-florcitas1.jpg"
-                 alt="Floreado detalle">
+            <img src="RECURSOS/pantalon-florcitas.jpg" class="thumb active rounded" data-full="RECURSOS/pantalon-florcitas.jpg">
+            <img src="RECURSOS/pantalon-florcitas1.jpg" class="thumb rounded" data-full="RECURSOS/pantalon-florcitas1.jpg">
           </div>
           <div class="card-body">
             <h5 class="product-title">Pantalon largo floreado</h5>
@@ -96,25 +130,19 @@
       <!-- Producto 2 -->
       <div class="col" data-category="liso">
         <div class="card h-100 card-nuevos">
-          <div class="card-img-top position-relative">
+          <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/remera-florcitas.jpg"
-              class="main-image img-fluid w-100"
+              src="RECURSOS/remera-florcitas.jpg"
+              class="main-image img-fluid"
               alt="Remera manga corta floreada"
               data-bs-toggle="modal"
               data-bs-target="#nuevosImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/remera-florcitas.jpg"
+              data-bs-src="RECURSOS/remera-florcitas.jpg"
             >
           </div>
           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/remera-florcitas.jpg"
-                 class="thumb active rounded"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/remera-florcitas.jpg"
-                 alt="Remera frontal">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/remera-florcitas1.jpg"
-                 class="thumb rounded"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/remera-florcitas1.jpg"
-                 alt="Remera detalle">
+            <img src="RECURSOS/remera-florcitas.jpg" class="thumb active rounded" data-full="RECURSOS/remera-florcitas.jpg">
+            <img src="RECURSOS/remera-florcitas1.jpg" class="thumb rounded" data-full="RECURSOS/remera-florcitas1.jpg">
           </div>
           <div class="card-body">
             <h5 class="product-title">Remera manga corta floreada</h5>
@@ -129,25 +157,19 @@
       <!-- Producto 3 -->
       <div class="col" data-category="estampado">
         <div class="card h-100 card-nuevos">
-          <div class="card-img-top position-relative">
+          <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-print1.jpg"
-              class="main-image img-fluid w-100"
+              src="RECURSOS/pantalon-print1.jpg"
+              class="main-image img-fluid"
               alt="Pantalon largo manchas"
               data-bs-toggle="modal"
               data-bs-target="#nuevosImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-print1.jpg"
+              data-bs-src="RECURSOS/pantalon-print1.jpg"
             >
           </div>
           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-print1.jpg"
-                 class="thumb active rounded"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-print1.jpg"
-                 alt="Manchas frontal">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-print.jpg"
-                 class="thumb rounded"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/pantalon-print.jpg"
-                 alt="Manchas detalle">
+            <img src="RECURSOS/pantalon-print1.jpg" class="thumb active rounded" data-full="RECURSOS/pantalon-print1.jpg">
+            <img src="RECURSOS/pantalon-print.jpg" class="thumb rounded" data-full="RECURSOS/pantalon-print.jpg">
           </div>
           <div class="card-body">
             <h5 class="product-title">Pantalon largo manchas</h5>
@@ -162,25 +184,19 @@
       <!-- Producto 4 -->
       <div class="col" data-category="rayas">
         <div class="card h-100 card-nuevos">
-          <div class="card-img-top position-relative">
+          <div class="card-img-top">
             <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/remera-print.jpg"
-              class="main-image img-fluid w-100"
+              src="RECURSOS/remera-print.jpg"
+              class="main-image img-fluid"
               alt="Remera blanca con detalle"
               data-bs-toggle="modal"
               data-bs-target="#nuevosImageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/remera-print.jpg"
+              data-bs-src="RECURSOS/remera-print.jpg"
             >
           </div>
           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/remera-print.jpg"
-                 class="thumb active rounded"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/remera-print.jpg"
-                 alt="Detalle frontal">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/remera-pantalon-print.jpg"
-                 class="thumb rounded"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/remera-pantalon-print.jpg"
-                 alt="Detalle conjunto">
+            <img src="RECURSOS/remera-print.jpg" class="thumb active rounded" data-full="RECURSOS/remera-print.jpg">
+            <img src="RECURSOS/remera-pantalon-print.jpg" class="thumb rounded" data-full="RECURSOS/remera-pantalon-print.jpg">
           </div>
           <div class="card-body">
             <h5 class="product-title">Remera manga corta blanca con detalles</h5>
@@ -199,7 +215,7 @@
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
         <div class="modal-header border-0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body p-0">
           <img id="nuevos-modal-img" src="" class="img-fluid w-100 rounded" alt="Ampliación">
@@ -209,7 +225,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="text-center py-4">
+  <footer>
     <p>&copy; 2025 Somos.mhum / Catálogo. Todos los derechos reservados.</p>
   </footer>
 
@@ -221,28 +237,27 @@
       document.getElementById('filter').addEventListener('change', function() {
         const cat = this.value;
         document.querySelectorAll('#product-container .col')
-          .forEach(col => col.style.display = (cat === 'all' || col.dataset.category === cat) ? 'block' : 'none');
+          .forEach(col => col.style.display = (cat==='all'||col.dataset.category===cat)?'block':'none');
       });
 
       // Miniaturas → actualizar principal y data-bs-src
-      document.querySelectorAll('.card-nuevos').forEach(card => {
-        const mainImg = card.querySelector('.main-image');
-        card.querySelectorAll('.thumb').forEach(thumb => {
-          thumb.addEventListener('click', () => {
-            card.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.card-nuevos').forEach(card=>{
+        const mainImg=card.querySelector('.main-image');
+        card.querySelectorAll('.thumb').forEach(thumb=>{
+          thumb.addEventListener('click',()=>{
+            card.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
             thumb.classList.add('active');
-            mainImg.src = thumb.dataset.full;
-            mainImg.setAttribute('data-bs-src', thumb.dataset.full);
+            mainImg.src=thumb.dataset.full;
+            mainImg.setAttribute('data-bs-src',thumb.dataset.full);
           });
         });
       });
 
-      // Al abrir el modal, carga la imagen desde data-bs-src
-      document.getElementById('nuevosImageModal')
-        .addEventListener('show.bs.modal', event => {
-          const src = event.relatedTarget.getAttribute('data-bs-src');
-          document.getElementById('nuevos-modal-img').src = src;
-        });
+      // Modal
+      document.getElementById('nuevosImageModal').addEventListener('show.bs.modal',e=>{
+        const src=e.relatedTarget.getAttribute('data-bs-src');
+        document.getElementById('nuevos-modal-img').src=src;
+      });
     });
   </script>
 </body>

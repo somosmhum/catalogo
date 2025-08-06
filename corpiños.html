@@ -1,17 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Corpiños – Catálogo Somos.mhum</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Tu CSS personalizado -->
-  <link rel="stylesheet" href="styles.css">
-  <!-- Miniaturas -->
+
+  <!-- Estilos personalizados embebidos -->
   <style>
-   
+    /* RESET + TIPOGRAFÍA */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Roboto', sans-serif !important;
+    }
+    body {
+      display: flex; flex-direction: column; min-height: 100vh;
+    }
+    .content { flex: 1; }
+
+    /* NAVBAR */
+    .custom-bg { background-color: #343a40 !important; }
+    .navbar { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    .navbar-logo { width: 120px; height: 60px; }
+    .nav-link {
+      font-size: 1.1rem; font-weight: 500;
+      color: #ffffff !important; transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #d5786a !important; font-weight: bold;
+    }
+    .custom-toggler .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      background-color: #f8f9fa; border-radius: 5px;
+      padding: 0.5rem 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .breadcrumb-item + .breadcrumb-item::before {
+      content: '>'; color: #6c757d; margin: 0 0.5rem;
+    }
+    .breadcrumb-item a {
+      color: #343a40; text-decoration: none; font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .breadcrumb-item a:hover { color: #d5786a; }
+    .breadcrumb-item.active {
+      color: #6c757d; font-weight: bold;
+    }
+
+    /* --- Aplica estilo idéntico al de .card-conjuntos pero sobre las cards de Corpiños --- */
+/* Selecciona las cards que usan position-relative */
+.card.position-relative {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Imagen principal con altura fija y cover */
+.card.position-relative .card-img-top .main-image {
+  width: 100%;
+  height: 400px;            /* conserva tu valor original */
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.card.position-relative .card-img-top .main-image:hover {
+  transform: scale(1.05);
+}
+
+/* Miniaturas */
+.card.position-relative .thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  flex-shrink: 0;
+}
+.card.position-relative .thumbnails img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+.card.position-relative .thumbnails img.active {
+  border-color: #d5786a;
+}
+
+/* Encabezado dentro de la card */
+.card.position-relative .product-title {
+  display: block;
+  background-color: #343a40;
+  color: #d5786a;
+  margin: 0 -1px 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+/* Cuerpo de la card para empujar contenido al fondo */
+.card.position-relative .card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  padding-top: 0.5rem;
+}
+/* Último elemento (por ej. el botón o precio) abajo */
+.card.position-relative .card-body > *:last-child {
+  margin-top: auto;
+}
+
+/* Asegura que las columnas contenedoras ocupen toda la altura */
+#product-container .col {
+  display: flex;
+}
+
+
+    /* FILTRADO */
+    #filter { max-width: 200px; }
+
+    /* BADGE DE IMÁGENES */
+    .image-count {
+      background-color: #d5786a !important;
+      color: #fff !important;
+      border-radius: 20%; font-size: 14px;
+      padding: 5px 10px; position: absolute;
+      top: 10px; left: 10px;
+    }
+
+    /* MINIATURAS */
+    .thumbnails img {
+      width: 60px; height: 60px; object-fit: cover;
+      cursor: pointer; border: 2px solid transparent;
+      border-radius: 4px; transition: border-color .2s;
+    }
+    .thumbnails img.active {
+      border-color: #d5786a;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #343a40; color: white;
+      padding: 20px 0; text-align: center; margin-top: auto;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .card-img-top img { height: 250px; }
+    }
   </style>
 </head>
 
@@ -19,8 +164,8 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light custom-bg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="https://somosmhum.github.io/catalogo/index.html">
-        <img src="https://somosmhum.github.io/catalogo/RECURSOS/logo.png" alt="Logo" class="navbar-logo">
+      <a class="navbar-brand" href="index.html">
+        <img src="RECURSOS/logo.png" alt="Logo" class="navbar-logo">
       </a>
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -29,10 +174,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="https://somosmhum.github.io/catalogo/quienes-somos.html">Quiénes Somos</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://somosmhum.github.io/catalogo/como-comprar.html">Cómo comprar</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://somosmhum.github.io/catalogo/tabladetalles.html">Tabla de Talles</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://somosmhum.github.io/catalogo/contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="como-comprar.html">Cómo comprar</a></li>
+          <li class="nav-item"><a class="nav-link" href="tabladetalles.html">Tabla de Talles</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
         </ul>
       </div>
     </div>
@@ -42,21 +187,21 @@
   <nav aria-label="breadcrumb" class="bg-light py-2">
     <div class="container">
       <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a href="https://somosmhum.github.io/catalogo/index.html">Inicio</a></li>
-        <li class="breadcrumb-item"><a href="https://somosmhum.github.io/catalogo/ropainterior.html">Ropa interior</a></li>
+        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="ropainterior.html">Ropa interior</a></li>
         <li class="breadcrumb-item active" aria-current="page">Corpiños</li>
       </ol>
     </div>
   </nav>
 
   <!-- Contenido Principal -->
-  <div class="container my-5">
+  <div class="container my-5 content">
     <h1 class="text-center mb-4">Corpiños</h1>
 
-    <!-- Filtro -->
-    <div class="mb-4">
+    <!-- Filtro por categoría -->
+    <div class="mb-4 text-center">
       <label for="filter" class="form-label"><strong>Filtrar por categoría:</strong></label>
-      <select id="filter" class="form-select">
+      <select id="filter" class="form-select d-inline-block ms-2">
         <option value="all">Todos</option>
         <option value="Negro">Negro</option>
         <option value="Blanco">Blanco</option>
@@ -66,37 +211,28 @@
 
     <!-- Productos -->
     <div id="product-container" class="row row-cols-1 row-cols-md-3 g-4">
-      <!-- Producto 1: Corpiño Pia -->
+      <!-- Corpiño Pia -->
       <div class="col" data-category="Negro">
-        <div class="card h-100">
+        <div class="card h-100 position-relative">
+          <!-- Badge de número de imágenes -->
+          <span class="image-count">4</span>
+          <!-- Imagen principal -->
           <div class="card-img-top">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/piablancoynegro.jpg"
-              class="main-image w-100"
-              alt="Corpiño Pia"
-              data-bs-toggle="modal"
-              data-bs-target="#imageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/piablancoynegro.jpg"
-            >
+            <img src="RECURSOS/piablancoynegro.jpg"
+                 class="main-image w-100"
+                 alt="Corpiño Pia"
+                 data-bs-toggle="modal"
+                 data-bs-target="#imageModal"
+                 data-bs-src="RECURSOS/piablancoynegro.jpg">
           </div>
+          <!-- Miniaturas -->
           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/piablancoynegro.jpg"
-                 class="thumb active"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/piablancoynegro.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/piablanco.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/piablanco.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/pianegro.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/pianegro.jpg"
-                 alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/piablancopuesto.jpg"
-                 class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/piablancopuesto.jpg"
-                 alt="">
+            <img src="RECURSOS/piablancoynegro.jpg" class="thumb active" data-full="RECURSOS/piablancoynegro.jpg" alt="">
+            <img src="RECURSOS/piablanco.jpg"           class="thumb"       data-full="RECURSOS/piablanco.jpg"           alt="">
+            <img src="RECURSOS/pianegro.jpg"           class="thumb"       data-full="RECURSOS/pianegro.jpg"           alt="">
+            <img src="RECURSOS/piablancopuesto.jpg"    class="thumb"       data-full="RECURSOS/piablancopuesto.jpg"    alt="">
           </div>
+          <!-- Datos del producto -->
           <div class="card-body">
             <h5 class="product-title">Corpiño Pia</h5>
             <p><strong>Precio:</strong> $23.000</p>
@@ -107,23 +243,22 @@
         </div>
       </div>
 
-      <!-- Producto 2: Corpiño Sofia Algodón -->
+      <!-- Corpiño Sofia Algodón -->
       <div class="col" data-category="Blanco">
-        <div class="card h-100">
+        <div class="card h-100 position-relative">
+          <span class="image-count">1</span>
           <div class="card-img-top">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/sofiaalgodon.jpg"
-              class="main-image w-100"
-              alt="Corpiño Sofia Algodón"
-              data-bs-toggle="modal"
-              data-bs-target="#imageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/sofiaalgodon.jpg"
-            >
+            <img src="RECURSOS/sofiaalgodon.jpg"
+                 class="main-image w-100"
+                 alt="Corpiño Sofia Algodón"
+                 data-bs-toggle="modal"
+                 data-bs-target="#imageModal"
+                 data-bs-src="RECURSOS/sofiaalgodon.jpg">
           </div>
           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/sofiaalgodon.jpg"
+            <img src="RECURSOS/sofiaalgodon.jpg"
                  class="thumb active"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/sofiaalgodon.jpg"
+                 data-full="RECURSOS/sofiaalgodon.jpg"
                  alt="">
           </div>
           <div class="card-body">
@@ -136,27 +271,26 @@
         </div>
       </div>
 
-      <!-- Producto 3: Corpiño Sofia Microtool -->
+      <!-- Corpiño Sofia Microtool -->
       <div class="col" data-category="Beige">
-        <div class="card h-100">
+        <div class="card h-100 position-relative">
+          <span class="image-count">2</span>
           <div class="card-img-top">
-            <img
-              src="https://somosmhum.github.io/catalogo/RECURSOS/sofiamicrotool.jpg"
-              class="main-image w-100"
-              alt="Corpiño Sofia Microtool"
-              data-bs-toggle="modal"
-              data-bs-target="#imageModal"
-              data-bs-src="https://somosmhum.github.io/catalogo/RECURSOS/sofiamicrotool.jpg"
-            >
+            <img src="RECURSOS/sofiamicrotool.jpg"
+                 class="main-image w-100"
+                 alt="Corpiño Sofia Microtool"
+                 data-bs-toggle="modal"
+                 data-bs-target="#imageModal"
+                 data-bs-src="RECURSOS/sofiamicrotool.jpg">
           </div>
           <div class="thumbnails d-flex justify-content-center mt-2 gap-2">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/sofiamicrotool.jpg"
+            <img src="RECURSOS/sofiamicrotool.jpg"
                  class="thumb active"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/sofiamicrotool.jpg"
+                 data-full="RECURSOS/sofiamicrotool.jpg"
                  alt="">
-            <img src="https://somosmhum.github.io/catalogo/RECURSOS/sofiamicrotoolnegro.jpg"
+            <img src="RECURSOS/sofiamicrotoolnegro.jpg"
                  class="thumb"
-                 data-full="https://somosmhum.github.io/catalogo/RECURSOS/sofiamicrotoolnegro.jpg"
+                 data-full="RECURSOS/sofiamicrotoolnegro.jpg"
                  alt="">
           </div>
           <div class="card-body">
@@ -171,29 +305,26 @@
     </div>
   </div>
 
-  <!-- Modal Bootstrap -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <button type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body p-0">
-        <img id="modal-img" src="" class="img-fluid w-100" alt="Ampliación">
+  <!-- Modal de ampliación -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-0">
+          <img id="modal-img" src="" class="img-fluid w-100" alt="Ampliación">
+        </div>
       </div>
     </div>
   </div>
-</div>
 
   <!-- Footer -->
-  <footer class="text-center py-4">
-    <p>&copy; 2025 Somos.mhum Catálogo. Todos los derechos reservados.</p>
+  <footer>
+    <p>&copy; 2025 Somos.mhum / Catálogo. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Bootstrap Bundle + Script -->
+  <!-- Bootstrap JS + comportamiento dinámico -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -203,31 +334,25 @@
         document.querySelectorAll('#product-container .col')
           .forEach(col => col.style.display = (cat === 'all' || col.dataset.category === cat) ? 'block' : 'none');
       });
-
-      // Miniaturas → actualizar principal y atributo data-bs-src
+      // Miniaturas → actualiza principal + data-bs-src
       document.querySelectorAll('.card').forEach(card => {
         const mainImg = card.querySelector('.main-image');
         card.querySelectorAll('.thumb').forEach(thumb => {
           thumb.addEventListener('click', () => {
-            // marca miniatura activa
             card.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
             thumb.classList.add('active');
-            // actualiza imagen principal y data-bs-src
             mainImg.src = thumb.dataset.full;
             mainImg.setAttribute('data-bs-src', thumb.dataset.full);
           });
         });
       });
-
-      // Al abrir el modal, carga la imagen desde data-bs-src
-      const imageModalEl = document.getElementById('imageModal');
-      imageModalEl.addEventListener('show.bs.modal', event => {
-        const trigger = event.relatedTarget;
-        const src = trigger.getAttribute('data-bs-src');
+      // Modal: toma el src desde data-bs-src
+      const modalEl = document.getElementById('imageModal');
+      modalEl.addEventListener('show.bs.modal', ev => {
+        const src = ev.relatedTarget.getAttribute('data-bs-src');
         document.getElementById('modal-img').src = src;
       });
     });
   </script>
 </body>
-
 </html>
